@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-16 21:29:25.411785",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "consumables_required",
+  "column_break_brey",
+  "quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "consumables_required",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Consumables Required"
+  },
+  {
+   "fieldname": "column_break_brey",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-06 13:21:16.987307",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Consumables Required",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

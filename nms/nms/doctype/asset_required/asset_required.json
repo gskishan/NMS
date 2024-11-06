@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-16 21:30:27.136994",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_required",
+  "column_break_fkki",
+  "quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_required",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Asset Required",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "column_break_fkki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-06 13:20:26.042368",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Asset Required",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

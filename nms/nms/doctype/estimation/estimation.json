@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-16 21:26:16.422825",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lead",
+  "column_break_oynx",
+  "project",
+  "manpower_required_section",
+  "manpower_required",
+  "consumables_required_section",
+  "table_hflb",
+  "asset_required_section",
+  "table_uxdr",
+  "section_break_duoo",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "column_break_oynx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "manpower_required_section",
+   "fieldtype": "Section Break",
+   "label": "Manpower Required"
+  },
+  {
+   "fieldname": "manpower_required",
+   "fieldtype": "Int",
+   "label": "Number of Manpower Required"
+  },
+  {
+   "fieldname": "consumables_required_section",
+   "fieldtype": "Section Break",
+   "label": "Consumables Required"
+  },
+  {
+   "fieldname": "table_hflb",
+   "fieldtype": "Table",
+   "options": "Consumables Required"
+  },
+  {
+   "fieldname": "asset_required_section",
+   "fieldtype": "Section Break",
+   "label": "Asset Required"
+  },
+  {
+   "fieldname": "table_uxdr",
+   "fieldtype": "Table",
+   "options": "Asset Required"
+  },
+  {
+   "fieldname": "section_break_duoo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-06 13:20:51.968218",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Estimation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
