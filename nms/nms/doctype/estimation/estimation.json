@@ -5,9 +5,28 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "lead",
+  "job",
+  "state",
   "column_break_oynx",
   "project",
+  "date",
+  "prepared_by",
+  "section_break_mteh",
+  "scope_of_work",
+  "responsibility",
+  "duration_for_job",
+  "diving_plans",
+  "record_of_diving",
+  "column_break_frlu",
+  "introduction",
+  "diving_team",
+  "briefing",
+  "protection_from_weather",
+  "diver_unwell_underwater",
+  "section_break_lksa",
+  "emergency_contact_numbers",
   "manpower_required_section",
   "manpower_required",
   "consumables_required_section",
@@ -72,11 +91,109 @@
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "User",
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "job",
+   "fieldtype": "Data",
+   "label": "Job"
+  },
+  {
+   "fieldname": "section_break_mteh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scope_of_work",
+   "fieldtype": "Data",
+   "label": "Scope of Work"
+  },
+  {
+   "fieldname": "responsibility",
+   "fieldtype": "Data",
+   "label": "Responsibility"
+  },
+  {
+   "fieldname": "duration_for_job",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Duration for Job",
+   "reqd": 1
+  },
+  {
+   "fieldname": "diving_plans",
+   "fieldtype": "Data",
+   "label": "Diving Plans"
+  },
+  {
+   "fieldname": "record_of_diving",
+   "fieldtype": "Data",
+   "label": "Record of Diving "
+  },
+  {
+   "fieldname": "column_break_frlu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "introduction",
+   "fieldtype": "Data",
+   "label": "Introduction"
+  },
+  {
+   "fieldname": "diving_team",
+   "fieldtype": "Data",
+   "label": "Diving Team"
+  },
+  {
+   "fieldname": "briefing",
+   "fieldtype": "Data",
+   "label": "Briefing"
+  },
+  {
+   "fieldname": "protection_from_weather",
+   "fieldtype": "Data",
+   "label": "Protection from weather "
+  },
+  {
+   "fieldname": "diver_unwell_underwater",
+   "fieldtype": "Data",
+   "label": "Diver Unwell underwater"
+  },
+  {
+   "fieldname": "section_break_lksa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "emergency_contact_numbers",
+   "fieldtype": "Table",
+   "label": "Emergency Contact Numbers",
+   "options": "Estimation Contact"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Select",
+   "label": "State",
+   "options": "\nNew\nCompleted"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-06 13:20:51.968218",
+ "modified": "2024-11-16 20:09:29.227567",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",
