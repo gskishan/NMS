@@ -1,7 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-10-20 22:36:01.435130",
+ "creation": "2024-11-18 23:30:47.052108",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -14,6 +15,8 @@
   "item_group",
   "required_by",
   "expected_delivery_date",
+  "status",
+  "assign_to",
   "description_section",
   "description",
   "column_break_adio",
@@ -69,6 +72,18 @@
    "label": "Item Name"
   },
   {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "product_bundle",
+   "fieldtype": "Link",
+   "label": "Product Bundle",
+   "options": "Product Bundle"
+  },
+  {
    "fieldname": "column_break_ujdc",
    "fieldtype": "Column Break"
   },
@@ -87,18 +102,6 @@
    "fieldname": "expected_delivery_date",
    "fieldtype": "Date",
    "label": "Expected Delivery Date"
-  },
-  {
-   "fieldname": "brand",
-   "fieldtype": "Link",
-   "label": "Brand",
-   "options": "Brand"
-  },
-  {
-   "fieldname": "product_bundle",
-   "fieldtype": "Link",
-   "label": "Product Bundle",
-   "options": "Product Bundle"
   },
   {
    "fieldname": "description_section",
@@ -130,6 +133,13 @@
    "fieldname": "quantity_and_rate_section",
    "fieldtype": "Section Break",
    "label": "Quantity and Rate"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
   },
   {
    "fieldname": "stock_uom",
@@ -176,6 +186,15 @@
    "print_hide": 1
   },
   {
+   "depends_on": "eval:doc.uom != doc.stock_uom",
+   "fieldname": "last_purchase_rate",
+   "fieldtype": "Currency",
+   "label": "Last Purchase Rate",
+   "options": "currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
    "fieldname": "column_break_ljbx",
    "fieldtype": "Column Break"
   },
@@ -184,15 +203,6 @@
    "fieldtype": "Currency",
    "label": "Price List Rate (Company Currency)",
    "options": "Company:company:default_currency"
-  },
-  {
-   "depends_on": "eval:doc.uom != doc.stock_uom",
-   "fieldname": "last_purchase_rate",
-   "fieldtype": "Currency",
-   "label": "Last Purchase Rate",
-   "options": "currency",
-   "print_hide": 1,
-   "read_only": 1
   },
   {
    "fieldname": "discount_and_margin_section",
@@ -253,7 +263,6 @@
   },
   {
    "columns": 2,
-   "depends_on": "eval: doc.type != \"\"",
    "fieldname": "rate",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -269,14 +278,14 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_rqnf",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "item_tax_template",
    "fieldtype": "Link",
    "label": "Item Tax Template",
    "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "column_break_rqnf",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "basic_rate_company_currency",
@@ -339,19 +348,26 @@
    "options": "BOM"
   },
   {
-   "fieldname": "qty",
-   "fieldtype": "Float",
-   "label": "Quantity",
-   "reqd": 1
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "assign_to",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Assign To"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-19 11:18:14.599312",
+ "modified": "2024-11-19 12:27:27.584355",
  "modified_by": "Administrator",
  "module": "Nms",
- "name": "Contract Item",
+ "name": "Planning Item",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

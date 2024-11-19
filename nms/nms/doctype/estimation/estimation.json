@@ -13,28 +13,23 @@
   "project",
   "date",
   "prepared_by",
-  "section_break_mteh",
-  "scope_of_work",
-  "responsibility",
-  "duration_for_job",
-  "diving_plans",
-  "record_of_diving",
-  "column_break_frlu",
-  "introduction",
-  "diving_team",
-  "briefing",
-  "protection_from_weather",
-  "diver_unwell_underwater",
-  "section_break_lksa",
-  "emergency_contact_numbers",
-  "manpower_required_section",
-  "manpower_required",
-  "consumables_required_section",
-  "table_hflb",
-  "asset_required_section",
-  "table_uxdr",
-  "section_break_duoo",
-  "description"
+  "section_break_ejfj",
+  "employees",
+  "employees_total",
+  "equipments",
+  "equipments_total",
+  "boats_and_vehicles",
+  "boats_and_vehicles_total",
+  "sub_contractors",
+  "sub_contractors_total",
+  "additional_costs",
+  "additional_costs_total",
+  "site_consumables",
+  "site_consumable_total",
+  "fire_consumption",
+  "fire_consumption_total",
+  "section_break_dgkk",
+  "main_total"
  ],
  "fields": [
   {
@@ -52,45 +47,6 @@
    "fieldtype": "Link",
    "label": "Project",
    "options": "Project"
-  },
-  {
-   "fieldname": "manpower_required_section",
-   "fieldtype": "Section Break",
-   "label": "Manpower Required"
-  },
-  {
-   "fieldname": "manpower_required",
-   "fieldtype": "Int",
-   "label": "Number of Manpower Required"
-  },
-  {
-   "fieldname": "consumables_required_section",
-   "fieldtype": "Section Break",
-   "label": "Consumables Required"
-  },
-  {
-   "fieldname": "table_hflb",
-   "fieldtype": "Table",
-   "options": "Consumables Required"
-  },
-  {
-   "fieldname": "asset_required_section",
-   "fieldtype": "Section Break",
-   "label": "Asset Required"
-  },
-  {
-   "fieldname": "table_uxdr",
-   "fieldtype": "Table",
-   "options": "Asset Required"
-  },
-  {
-   "fieldname": "section_break_duoo",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
   },
   {
    "fieldname": "details_section",
@@ -115,85 +71,105 @@
    "label": "Job"
   },
   {
-   "fieldname": "section_break_mteh",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "scope_of_work",
-   "fieldtype": "Data",
-   "label": "Scope of Work"
-  },
-  {
-   "fieldname": "responsibility",
-   "fieldtype": "Data",
-   "label": "Responsibility"
-  },
-  {
-   "fieldname": "duration_for_job",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Duration for Job",
-   "reqd": 1
-  },
-  {
-   "fieldname": "diving_plans",
-   "fieldtype": "Data",
-   "label": "Diving Plans"
-  },
-  {
-   "fieldname": "record_of_diving",
-   "fieldtype": "Data",
-   "label": "Record of Diving "
-  },
-  {
-   "fieldname": "column_break_frlu",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "introduction",
-   "fieldtype": "Data",
-   "label": "Introduction"
-  },
-  {
-   "fieldname": "diving_team",
-   "fieldtype": "Data",
-   "label": "Diving Team"
-  },
-  {
-   "fieldname": "briefing",
-   "fieldtype": "Data",
-   "label": "Briefing"
-  },
-  {
-   "fieldname": "protection_from_weather",
-   "fieldtype": "Data",
-   "label": "Protection from weather "
-  },
-  {
-   "fieldname": "diver_unwell_underwater",
-   "fieldtype": "Data",
-   "label": "Diver Unwell underwater"
-  },
-  {
-   "fieldname": "section_break_lksa",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "emergency_contact_numbers",
-   "fieldtype": "Table",
-   "label": "Emergency Contact Numbers",
-   "options": "Estimation Contact"
-  },
-  {
    "fieldname": "state",
    "fieldtype": "Select",
    "label": "State",
    "options": "\nNew\nCompleted"
+  },
+  {
+   "fieldname": "section_break_ejfj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Table",
+   "label": "Employees",
+   "options": "Employee Estimation"
+  },
+  {
+   "fieldname": "equipments",
+   "fieldtype": "Table",
+   "label": "Equipments",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "boats_and_vehicles",
+   "fieldtype": "Table",
+   "label": "Boats And Vehicles",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "sub_contractors",
+   "fieldtype": "Table",
+   "label": "Sub Contractors",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "additional_costs",
+   "fieldtype": "Table",
+   "label": "Additional Costs",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "site_consumables",
+   "fieldtype": "Table",
+   "label": "Site Consumables",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "fire_consumption",
+   "fieldtype": "Table",
+   "label": "Fire Consumption",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "fire_consumption_total",
+   "fieldtype": "Float",
+   "label": "Fire Consumption Total"
+  },
+  {
+   "fieldname": "site_consumable_total",
+   "fieldtype": "Float",
+   "label": "Site Consumable Total"
+  },
+  {
+   "fieldname": "additional_costs_total",
+   "fieldtype": "Float",
+   "label": "Additional Costs Total"
+  },
+  {
+   "fieldname": "sub_contractors_total",
+   "fieldtype": "Float",
+   "label": "Sub Contractors Total"
+  },
+  {
+   "fieldname": "boats_and_vehicles_total",
+   "fieldtype": "Float",
+   "label": "Boats and Vehicles Total"
+  },
+  {
+   "fieldname": "equipments_total",
+   "fieldtype": "Float",
+   "label": "Equipments Total"
+  },
+  {
+   "fieldname": "employees_total",
+   "fieldtype": "Float",
+   "label": "Employees Total"
+  },
+  {
+   "fieldname": "section_break_dgkk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "main_total",
+   "fieldtype": "Float",
+   "label": "Main Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 20:09:29.227567",
+ "modified": "2024-11-19 10:27:26.005442",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

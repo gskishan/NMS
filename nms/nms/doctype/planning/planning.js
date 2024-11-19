@@ -1,15 +1,56 @@
 // Copyright (c) 2024, kishan and contributors
 // For license information, please see license.txt
 
+frappe.ui.form.on("Planning Item", {
+    qty: function (frm, cdt, cdn) {
+        update_amount(frm, cdt, cdn);
+    },
+    rate: function (frm, cdt, cdn) {
+        update_amount(frm, cdt, cdn);
+    },
+	assign_to: function (frm,cdt,cdn) {
+        
+		const row = locals[cdt][cdn]
+		console.log(row)
+        const dialog = new frappe.ui.form.AssignToDialog({
+            frm: frm,
+            method: "nms.nms.doctype.planning.planning.add_assignee",
+            doctype: frm.doc.doctype,
+            docname: frm.doc.name,
+            bulk_assign: false, 
+			row: row,
+            callback: function (response) {
+                frappe.msgprint(__('Assignment successful'));
+				console.log(response)
+                // You can handle additional logic here, like refreshing the form
+                frm.refresh();
+            },
+        });
+
+        dialog.dialog.show(); // Open the dialog
+    },
+});
+
+function update_amount(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+	
+	let amount = row.qty*row.rate;
+
+	frappe.model.set_value(cdt, cdn, "amount", amount);
+    frm.refresh_field("planning_item");
+}
+
+
 frappe.ui.form.AssignToDialog = class AssignToDialog {
 	constructor(opts) {
+		console.log("helooooooooooooooooo")
 		$.extend(this, opts);
 
 		this.make();
 		this.set_description_from_doc();
 	}
 	make() {
-        console.log("innnnnnnnnnnnnnn")
+
 		let me = this;
 
 		me.dialog = new frappe.ui.Dialog({
@@ -30,6 +71,7 @@ frappe.ui.form.AssignToDialog = class AssignToDialog {
 							assign_to: args.assign_to,
 							bulk_assign: me.bulk_assign || false,
 							re_assign: me.re_assign || false,
+							row:me.row
 						}),
 						btn: me.dialog.get_primary_btn(),
 						callback: function (r) {
@@ -154,6 +196,36 @@ frappe.ui.form.AssignToDialog = class AssignToDialog {
 				label: __("Comment"),
 				fieldtype: "Small Text",
 				fieldname: "description",
+			},
+			{
+				fieldtype: "Data",
+				fieldname: "item_code",
+				hidden: 1,
+				default: me.row.item_code, 
+			},
+			{
+				fieldtype: "Data",
+				fieldname: "item_name",
+				hidden: 1,
+				default: me.row.item_name, 
+			},
+			{
+				fieldtype: "Float",
+				fieldname: "qty",
+				hidden: 1,
+				default: me.row.qty, 
+			},
+			{
+				fieldtype: "Currency",
+				fieldname: "rate",
+				hidden: 1,
+				default: me.row.rate,
+			},
+			{
+				fieldtype: "Currency",
+				fieldname: "amount",
+				hidden: 1,
+				default: me.row.amount,
 			},
 		];
 	}

@@ -10,6 +10,14 @@
   "sales_order",
   "section_break_adfw",
   "planning_item",
+  "section_break_krnz",
+  "employees",
+  "equipments",
+  "boats_and_vehicles",
+  "sub_contractors",
+  "additional_costs",
+  "site_consumables",
+  "fire_consumption",
   "section_break_kyrm",
   "asset",
   "section_break_nbmb",
@@ -57,7 +65,7 @@
    "fieldname": "planning_item",
    "fieldtype": "Table",
    "label": "Item",
-   "options": "Contract Item"
+   "options": "Planning Item"
   },
   {
    "fieldname": "amended_from",
@@ -68,12 +76,58 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "section_break_krnz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Table",
+   "label": "Employees",
+   "options": "Employee Estimation"
+  },
+  {
+   "fieldname": "equipments",
+   "fieldtype": "Table",
+   "label": "Equipments",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "boats_and_vehicles",
+   "fieldtype": "Table",
+   "label": "Boats And Vehicles",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "sub_contractors",
+   "fieldtype": "Table",
+   "label": "Sub Contractors",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "additional_costs",
+   "fieldtype": "Table",
+   "label": "Additional Costs",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "site_consumables",
+   "fieldtype": "Table",
+   "label": "Site Consumables",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "fire_consumption",
+   "fieldtype": "Table",
+   "label": "Fire Consumption",
+   "options": "Estimation Ct"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-26 19:19:35.987419",
+ "modified": "2024-11-18 23:40:19.653676",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Planning",

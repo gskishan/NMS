@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-18 19:02:55.227539",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sub_components",
+  "price",
+  "day",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "sub_components",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sub Components",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "sub_components.custom_employee_per_day_rate",
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Day"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-18 19:41:12.605090",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Employee Estimation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
