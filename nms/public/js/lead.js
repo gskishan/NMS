@@ -36,3 +36,20 @@ frappe.ui.form.on("Lead", {
         }
     }
 });
+
+// frappe.ui.form.on("Lead Item",{
+//     quantity: function (frm, cdt, cdn) {
+//         update_amount(frm, cdt, cdn);
+//     },
+//     rate: function (frm, cdt, cdn) {
+//         update_amount(frm, cdt, cdn);
+//     },
+// })
+// function update_amount(frm, cdt, cdn) {
+//     let row = locals[cdt][cdn];
+	
+// 	let amount = row.quantity*row.rate;
+
+// 	frappe.model.set_value(cdt, cdn, "amount", amount);
+//     frm.refresh_field("custom_lead_item");
+// }
