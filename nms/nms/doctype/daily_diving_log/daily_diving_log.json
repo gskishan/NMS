@@ -1,0 +1,238 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 20:40:10.889956",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "site",
+  "column_break_ainm",
+  "location",
+  "column_break_gbox",
+  "date",
+  "column_break_qplq",
+  "type_of_diving",
+  "column_break_xedw",
+  "table_used",
+  "section_break_gwbu",
+  "column_break_nlle",
+  "standby_diver_one",
+  "column_break_swhf",
+  "diving_apparatus_one",
+  "column_break_mzoa",
+  "bailout_one",
+  "column_break_ptlm",
+  "tender_one",
+  "column_break_insp",
+  "weather_conditions",
+  "section_break_refd",
+  "standby_diver_2",
+  "column_break_runx",
+  "diving_apparatus_two",
+  "column_break_hhha",
+  "bailout_two",
+  "column_break_edri",
+  "tender_two",
+  "column_break_puew",
+  "section_break_ehgs",
+  "table_mvkh",
+  "section_break_pkhw",
+  "purpose_of_diving",
+  "column_break_blrm",
+  "divers_condition",
+  "column_break_xtbt",
+  "diving_supervisor"
+ ],
+ "fields": [
+  {
+   "fieldname": "site",
+   "fieldtype": "Data",
+   "label": "Site"
+  },
+  {
+   "fieldname": "column_break_ainm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Vessel/Location"
+  },
+  {
+   "fieldname": "column_break_gbox",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_gwbu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_of_diving",
+   "fieldtype": "Select",
+   "label": "Type of Diving"
+  },
+  {
+   "fieldname": "column_break_nlle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "table_used",
+   "fieldtype": "Data",
+   "label": "Table Used"
+  },
+  {
+   "fieldname": "column_break_mzoa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_refd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_runx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hhha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "standby_diver_one",
+   "fieldtype": "Data",
+   "label": "Standby Diver 1"
+  },
+  {
+   "fieldname": "diving_apparatus_one",
+   "fieldtype": "Data",
+   "label": "Diving Apparatus "
+  },
+  {
+   "fieldname": "bailout_one",
+   "fieldtype": "Data",
+   "label": "Bailout"
+  },
+  {
+   "fieldname": "tender_one",
+   "fieldtype": "Data",
+   "label": "Tender 1"
+  },
+  {
+   "fieldname": "weather_conditions",
+   "fieldtype": "Data",
+   "label": "Weather Conditions"
+  },
+  {
+   "fieldname": "standby_diver_2",
+   "fieldtype": "Data",
+   "label": "Standby Diver 2"
+  },
+  {
+   "fieldname": "diving_apparatus_two",
+   "fieldtype": "Data",
+   "label": "Diving Apparatus"
+  },
+  {
+   "fieldname": "bailout_two",
+   "fieldtype": "Data",
+   "label": "Bailout"
+  },
+  {
+   "fieldname": "tender_two",
+   "fieldtype": "Data",
+   "label": "Tender 2"
+  },
+  {
+   "fieldname": "column_break_qplq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xedw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_swhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ptlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_insp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_edri",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_puew",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ehgs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_mvkh",
+   "fieldtype": "Table",
+   "options": "Daily Diving Log CT"
+  },
+  {
+   "fieldname": "section_break_pkhw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "purpose_of_diving",
+   "fieldtype": "Data",
+   "label": "Purpose of Diving"
+  },
+  {
+   "fieldname": "column_break_blrm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "divers_condition",
+   "fieldtype": "Data",
+   "label": "Divers Condition"
+  },
+  {
+   "fieldname": "column_break_xtbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diving_supervisor",
+   "fieldtype": "Data",
+   "label": "Diving Supervisor"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-19 20:53:51.285640",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Daily Diving Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

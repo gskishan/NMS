@@ -1,12 +1,9 @@
 frappe.ui.form.on("ToDo", {
     setup: function(frm) {
-        console.log("innnnnnnnnnnnnnnnnnnn")
         if (frm.doc.reference_type === "Planning") {
-            console.log(frm.doc.reference_name);
             
             frappe.db.get_doc("Planning", frm.doc.reference_name).then(plan_doc => {
-                console.log(plan_doc.planning_item);
-                
+             
                 frm.set_value("custom_sales_order", plan_doc.sales_order);
                 frm.set_value("custom_customer", plan_doc.customer);
                 
@@ -28,5 +25,44 @@ frappe.ui.form.on("ToDo", {
 
             })
         }
-    }
+    },
+    refresh: function (frm) {
+        manage_buttons(frm);
+    },
+
+    custom_is_daily_divine_log: function (frm) {
+        manage_buttons(frm);
+    },
+
+    custom_is_daily_report: function (frm) {
+        manage_buttons(frm);
+    },
+
+    custom_is_daily_check: function (frm) {
+        manage_buttons(frm);
+    },
+    
 });
+
+function manage_buttons(frm) {
+   
+    frm.clear_custom_buttons();
+
+    if (frm.doc.custom_is_daily_divine_log) {
+        frm.add_custom_button(__('Daily Diving Log'), function () {
+            frappe.new_doc('Daily Diving Log');
+        });
+    }
+
+    if (frm.doc.custom_is_daily_report) {
+        frm.add_custom_button(__('Daily Report'), function () {
+            frappe.new_doc('Daily Report');
+        });
+    }
+
+    if (frm.doc.custom_is_daily_check) {
+        frm.add_custom_button(__('Daily Check'), function () {
+            frappe.new_doc('Daily Check');
+        });
+    }
+}

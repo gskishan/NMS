@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 20:48:49.779782",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "divers_name",
+  "column_break_xruu",
+  "left_surface",
+  "section_break_aqnt",
+  "reached_bottom",
+  "column_break_ggvp",
+  "left_bottom",
+  "section_break_dbld",
+  "arrived_surface",
+  "column_break_pnym",
+  "depth",
+  "section_break_xmyb",
+  "bailout",
+  "column_break_ecsh",
+  "total_dive_time",
+  "section_break_kzic",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "divers_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Divers Name"
+  },
+  {
+   "fieldname": "column_break_xruu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "left_surface",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Left Surface"
+  },
+  {
+   "fieldname": "section_break_aqnt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reached_bottom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reached Bottom"
+  },
+  {
+   "fieldname": "column_break_ggvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "left_bottom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Left Bottom"
+  },
+  {
+   "fieldname": "section_break_dbld",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "arrived_surface",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Arrived Surface"
+  },
+  {
+   "fieldname": "column_break_pnym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "depth",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Depth"
+  },
+  {
+   "fieldname": "section_break_xmyb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bailout",
+   "fieldtype": "Data",
+   "label": "BailOut"
+  },
+  {
+   "fieldname": "column_break_ecsh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_dive_time",
+   "fieldtype": "Data",
+   "label": "Total Dive Time"
+  },
+  {
+   "fieldname": "section_break_kzic",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-19 20:52:51.541706",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Daily Diving Log CT",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

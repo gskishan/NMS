@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 20:54:50.490991",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_number",
+  "column_break_hxeh",
+  "date",
+  "section_break_norn",
+  "client",
+  "site",
+  "remarks",
+  "column_break_zpyb",
+  "equipment",
+  "personal",
+  "section_break_quex",
+  "work_carried_out",
+  "section_break_xzef",
+  "consumables"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Data",
+   "label": "Report/Job Number"
+  },
+  {
+   "fieldname": "column_break_hxeh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_norn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Location"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_zpyb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Link",
+   "label": "Equipment",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "personal",
+   "fieldtype": "Text Editor",
+   "label": "Personal"
+  },
+  {
+   "fieldname": "section_break_quex",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "work_carried_out",
+   "fieldtype": "Table",
+   "label": "Work Carried Out",
+   "options": "Work Carried Out Ct"
+  },
+  {
+   "fieldname": "section_break_xzef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "consumables",
+   "fieldtype": "Table",
+   "label": "Consumables",
+   "options": "Consumables Ct"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-19 21:42:25.646339",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Daily Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
