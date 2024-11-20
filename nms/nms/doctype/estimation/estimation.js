@@ -36,7 +36,7 @@ function update_estimation_amount(frm,cdt,cdn){
     frm.refresh_field("sub_contractors")
     frm.refresh_field("additional_costs")
     frm.refresh_field("site_consumables")
-    frm.refresh_field("fire_consumption")
+    frm.refresh_field("fuel_consumption")
 
     calculate_totals(frm); // Update totals after amount is set
 
@@ -59,7 +59,7 @@ function calculate_totals(frm) {
         let sub_contractors_total = 0;
         let additional_costs_total = 0;
         let site_consumable_total = 0;
-        let fire_consumption_total = 0;
+        let fuel_consumption_total = 0;
 
         frm.doc.employees.forEach(row => {
             employees_total += row.amount || 0;
@@ -91,10 +91,10 @@ function calculate_totals(frm) {
         });
         frm.set_value("site_consumable_total", site_consumable_total);
 
-        frm.doc.fire_consumption.forEach(row => {
-            fire_consumption_total += row.amount || 0;
+        frm.doc.fuel_consumption.forEach(row => {
+            fuel_consumption_total += row.amount || 0;
         });
-        frm.set_value("fire_consumption_total", fire_consumption_total);
+        frm.set_value("fuel_consumption_total", fuel_consumption_total);
 
         // Calculate the main total
         let main_total =
@@ -104,7 +104,7 @@ function calculate_totals(frm) {
         sub_contractors_total +
         additional_costs_total +
         site_consumable_total +
-        fire_consumption_total;
+        fuel_consumption_total;
 
         // Set the main total field
         frm.set_value("main_total", main_total);

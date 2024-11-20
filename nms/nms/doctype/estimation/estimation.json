@@ -9,26 +9,57 @@
   "lead",
   "job",
   "state",
+  "start_date",
   "column_break_oynx",
   "project",
   "date",
   "prepared_by",
-  "section_break_ejfj",
+  "end_date",
+  "section_break_ydim",
   "employees",
+  "section_break_hjon",
+  "column_break_duum",
+  "column_break_yuqq",
   "employees_total",
+  "section_break_sgyr",
   "equipments",
+  "section_break_bjlj",
+  "column_break_juat",
+  "column_break_ctny",
   "equipments_total",
+  "section_break_kgps",
   "boats_and_vehicles",
+  "section_break_aoln",
+  "column_break_kjgz",
+  "column_break_wcme",
   "boats_and_vehicles_total",
+  "section_break_ejfj",
   "sub_contractors",
+  "section_break_bklr",
+  "column_break_jbia",
+  "column_break_burn",
   "sub_contractors_total",
+  "section_break_skvr",
   "additional_costs",
+  "section_break_wljy",
+  "column_break_smvw",
+  "column_break_ijwt",
   "additional_costs_total",
+  "section_break_ujso",
   "site_consumables",
+  "section_break_rotm",
+  "column_break_jzfo",
+  "column_break_qayz",
   "site_consumable_total",
-  "fire_consumption",
-  "fire_consumption_total",
+  "section_break_uxll",
+  "fuel_consumption",
+  "section_break_iczg",
+  "column_break_chxg",
+  "column_break_lzno",
+  "fuel_consumption_total",
   "section_break_dgkk",
+  "column_break_oydy",
+  "column_break_tefu",
   "main_total"
  ],
  "fields": [
@@ -117,45 +148,34 @@
    "options": "Estimation Ct"
   },
   {
-   "fieldname": "fire_consumption",
-   "fieldtype": "Table",
-   "label": "Fire Consumption",
-   "options": "Estimation Ct"
-  },
-  {
-   "fieldname": "fire_consumption_total",
-   "fieldtype": "Float",
-   "label": "Fire Consumption Total"
-  },
-  {
    "fieldname": "site_consumable_total",
    "fieldtype": "Float",
-   "label": "Site Consumable Total"
+   "label": "Subtotal-Site Consumable"
   },
   {
    "fieldname": "additional_costs_total",
    "fieldtype": "Float",
-   "label": "Additional Costs Total"
+   "label": "Subtotal-Additional Costs"
   },
   {
    "fieldname": "sub_contractors_total",
    "fieldtype": "Float",
-   "label": "Sub Contractors Total"
+   "label": "Subtotal-Sub Contractors"
   },
   {
    "fieldname": "boats_and_vehicles_total",
    "fieldtype": "Float",
-   "label": "Boats and Vehicles Total"
+   "label": "Subtotal-Boats and Vehicles"
   },
   {
    "fieldname": "equipments_total",
    "fieldtype": "Float",
-   "label": "Equipments Total"
+   "label": "Subtotal-Equipments"
   },
   {
    "fieldname": "employees_total",
    "fieldtype": "Float",
-   "label": "Employees Total"
+   "label": "Subtotal-Employees"
   },
   {
    "fieldname": "section_break_dgkk",
@@ -165,11 +185,150 @@
    "fieldname": "main_total",
    "fieldtype": "Float",
    "label": "Main Total"
+  },
+  {
+   "fetch_from": "project.expected_start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fetch_from": "project.expected_end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_ydim",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_hjon",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_duum",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yuqq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_sgyr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_bjlj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_juat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ctny",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kgps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_aoln",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kjgz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wcme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bklr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jbia",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_burn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_skvr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_wljy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_smvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ijwt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ujso",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_rotm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jzfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qayz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uxll",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_iczg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_chxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lzno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oydy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tefu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fuel_consumption",
+   "fieldtype": "Table",
+   "label": "Fuel Consumption",
+   "options": "Estimation Ct"
+  },
+  {
+   "fieldname": "fuel_consumption_total",
+   "fieldtype": "Float",
+   "label": "Subtotal-Fuel Consumption"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 20:33:59.435432",
+ "modified": "2024-11-20 19:34:56.748167",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",
