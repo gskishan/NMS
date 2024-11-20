@@ -11,7 +11,7 @@ frappe.ui.form.on("Task", {
         manage_buttons(frm);
     },
 
-    custom_is_daily_check: function (frm) {
+    custom_is_meal: function (frm) {
         manage_buttons(frm);
     },
     
@@ -33,9 +33,9 @@ function manage_buttons(frm) {
         });
     }
 
-    if (frm.doc.custom_is_daily_check) {
-        frm.add_custom_button(__('Daily Check'), function () {
-            frappe.new_doc('Daily Check');
+    if (frm.doc.custom_is_meal) {
+        frm.add_custom_button(__('Meal'), function () {
+            frappe.new_doc('Meal');
         });
     }
 }

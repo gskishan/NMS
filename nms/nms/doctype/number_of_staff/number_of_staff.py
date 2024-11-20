@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class DailyCheckCt(Document):
+class NumberofStaff(Document):
 	pass

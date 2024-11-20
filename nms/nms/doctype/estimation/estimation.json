@@ -10,6 +10,7 @@
   "job",
   "state",
   "start_date",
+  "quotation",
   "column_break_oynx",
   "project",
   "date",
@@ -324,11 +325,17 @@
    "fieldname": "fuel_consumption_total",
    "fieldtype": "Float",
    "label": "Subtotal-Fuel Consumption"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-20 19:34:56.748167",
+ "modified": "2024-11-20 23:19:55.956990",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

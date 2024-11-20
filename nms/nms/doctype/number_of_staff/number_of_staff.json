@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 21:33:25.806934",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_name",
+  "date",
+  "overtime_hours",
+  "total_hours",
+  "lunch",
+  "inhouse_boat_by_client",
+  "boat_driver",
+  "column_break_jowx",
+  "position",
+  "time_in",
+  "time_out",
+  "breakfast",
+  "dinner",
+  "number_of_boat",
+  "boat_supplier",
+  "section_break_fvps",
+  "is_ok",
+  "column_break_rdpl",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_jowx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fvps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_ok",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Ok"
+  },
+  {
+   "fieldname": "column_break_rdpl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Remark"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "overtime_hours",
+   "fieldtype": "Time",
+   "label": "Overtime Hours"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Time",
+   "label": "Total Hours"
+  },
+  {
+   "fieldname": "lunch",
+   "fieldtype": "Data",
+   "label": "Lunch"
+  },
+  {
+   "fieldname": "inhouse_boat_by_client",
+   "fieldtype": "Select",
+   "label": "Inhouse Boat by Client"
+  },
+  {
+   "fieldname": "boat_driver",
+   "fieldtype": "Int",
+   "label": "Boat Driver"
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Position"
+  },
+  {
+   "fieldname": "time_in",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time In"
+  },
+  {
+   "fieldname": "time_out",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time Out"
+  },
+  {
+   "fieldname": "breakfast",
+   "fieldtype": "Data",
+   "label": "Breakfast"
+  },
+  {
+   "fieldname": "dinner",
+   "fieldtype": "Data",
+   "label": "Dinner"
+  },
+  {
+   "fieldname": "number_of_boat",
+   "fieldtype": "Int",
+   "label": "Number of Boat"
+  },
+  {
+   "fieldname": "boat_supplier",
+   "fieldtype": "Data",
+   "label": "Boat Supplier"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-20 23:07:16.781727",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Number of Staff",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

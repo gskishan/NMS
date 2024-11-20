@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestDailyCheck(FrappeTestCase):
+class TestMeal(FrappeTestCase):
 	pass

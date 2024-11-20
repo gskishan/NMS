@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 21:32:13.372275",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_merl",
+  "amended_from",
+  "customer",
+  "starting_date_of_project",
+  "column_break_aetg",
+  "project_name",
+  "location",
+  "ending_date_of_project",
+  "section_break_shut",
+  "daily_check_ct"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_merl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meal",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "daily_check_ct",
+   "fieldtype": "Table",
+   "label": "Number of Staff",
+   "options": "Number of Staff"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "starting_date_of_project",
+   "fieldtype": "Date",
+   "label": "Starting Date of Project"
+  },
+  {
+   "fieldname": "column_break_aetg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Link",
+   "label": "Project Name",
+   "options": "Project"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "ending_date_of_project",
+   "fieldtype": "Date",
+   "label": "Ending Date of Project"
+  },
+  {
+   "fieldname": "section_break_shut",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-20 23:10:18.906603",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Meal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

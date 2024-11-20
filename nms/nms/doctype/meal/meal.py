@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class DailyCheck(Document):
+class Meal(Document):
 	pass
