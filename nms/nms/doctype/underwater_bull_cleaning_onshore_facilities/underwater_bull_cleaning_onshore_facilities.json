@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-27 13:48:24.583286",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "scope_of_works",
+  "daily_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "scope_of_works",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scope of Works"
+  },
+  {
+   "fieldname": "daily_rate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Daily Rate"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-27 13:49:05.225066",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Underwater Bull Cleaning Onshore Facilities",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

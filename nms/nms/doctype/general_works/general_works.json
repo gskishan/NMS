@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-27 13:49:21.449603",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_underwater",
+  "shinas",
+  "khasab",
+  "shannah",
+  "masirah",
+  "dibba",
+  "lima",
+  "halaniyat",
+  "muscat"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_underwater",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Underwater"
+  },
+  {
+   "fieldname": "shinas",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Shinas"
+  },
+  {
+   "fieldname": "khasab",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Khasab"
+  },
+  {
+   "fieldname": "shannah",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Shannah"
+  },
+  {
+   "fieldname": "masirah",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Masirah"
+  },
+  {
+   "fieldname": "dibba",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Dibba"
+  },
+  {
+   "fieldname": "lima",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Lima"
+  },
+  {
+   "fieldname": "halaniyat",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Halaniyat"
+  },
+  {
+   "fieldname": "muscat",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Muscat"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-27 14:17:43.102765",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "General Works",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

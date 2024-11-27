@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-27 13:46:37.144472",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vessels",
+  "shinas",
+  "khasab",
+  "shannah",
+  "masirah",
+  "hallaniyat",
+  "muscat"
+ ],
+ "fields": [
+  {
+   "fieldname": "vessels",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vessels"
+  },
+  {
+   "fieldname": "shinas",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Shinas"
+  },
+  {
+   "fieldname": "khasab",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Khasab"
+  },
+  {
+   "fieldname": "shannah",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Shannah"
+  },
+  {
+   "fieldname": "masirah",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Masirah"
+  },
+  {
+   "fieldname": "hallaniyat",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Hallaniyat"
+  },
+  {
+   "fieldname": "muscat",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Muscat"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-27 14:27:57.252679",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Underwater Bull Cleaning Vessels",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
