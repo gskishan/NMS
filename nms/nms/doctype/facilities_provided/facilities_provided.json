@@ -14,23 +14,26 @@
   {
    "fieldname": "facilities",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Facilities"
   },
   {
    "fieldname": "facility_materials",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Facility Materials"
   },
   {
    "fieldname": "features",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Features"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-27 14:21:03.766036",
+ "modified": "2024-11-27 19:15:30.033628",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Facilities Provided",

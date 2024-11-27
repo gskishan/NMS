@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:contract_type",
+ "creation": "2024-11-27 18:08:45.747171",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_type",
+  "left",
+  "right",
+  "is_group",
+  "old_parent",
+  "parent_contract_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Data",
+   "label": "Contract Type",
+   "unique": 1
+  },
+  {
+   "fieldname": "left",
+   "fieldtype": "Int",
+   "label": "Left"
+  },
+  {
+   "fieldname": "right",
+   "fieldtype": "Int",
+   "label": "Right"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Contract Type"
+  },
+  {
+   "fieldname": "parent_contract_type",
+   "fieldtype": "Link",
+   "label": "Parent Contract Type",
+   "options": "Contract Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-27 18:55:36.171798",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Contract Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
