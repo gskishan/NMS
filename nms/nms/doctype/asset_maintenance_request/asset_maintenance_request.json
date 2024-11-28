@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{Asset}-{Req}-{####}",
+ "creation": "2024-11-28 10:34:32.651973",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bwzg",
+  "amended_from",
+  "asset",
+  "asset_name",
+  "asset_category",
+  "customer",
+  "column_break_onpt",
+  "item_code",
+  "item_name",
+  "location",
+  "department"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bwzg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Asset Maintenance Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "column_break_onpt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fetch_from": "asset.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "label": "Asset Name"
+  },
+  {
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "label": "Asset Category",
+   "options": "Asset Category"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-28 10:51:12.694029",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Asset Maintenance Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
