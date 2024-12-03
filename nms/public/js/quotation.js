@@ -1,5 +1,4 @@
 frappe.ui.form.on("Quotation Item", {
-
     rate: function(frm,cdt,cdn){
         calculate_total_rate_with_vat(frm,cdt,cdn)
     },    
@@ -7,6 +6,18 @@ frappe.ui.form.on("Quotation Item", {
         calculate_total_rate_with_vat(frm,cdt,cdn)
     }
 });
+frappe.ui.form.on("Quotation",{
+    refresh: function(frm) {
+        if (!frm.is_new()) {
+            frm.add_custom_button(__("Estimation"), function() {
+                frappe.route_options = {
+                    "quotation": frm.doc.name,
+                };
+                frappe.set_route("estimation", "new-estimation");
+            });
+        }
+    },
+})
 
 function calculate_total_rate_with_vat(frm, cdt, cdn) {
     

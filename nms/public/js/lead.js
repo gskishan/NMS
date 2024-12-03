@@ -19,10 +19,38 @@ frappe.ui.form.on("Lead", {
                         if(r.message) {
                             frappe.route_options = {
                                 "custom_lead": frm.doc.name,
+                                "customer": frm.doc.custom_customer_name
                                 
                             };            
                             frappe.set_route("project", "new-project");
                         }
+                    }
+                });
+            });
+            frm.add_custom_button("Quotation", function() {
+                frappe.call({
+                    method: "frappe.client.get",
+                    args: {
+                        doctype: "Lead",
+                        name: frm.doc.name
+                    },
+                    callback: function(r) {
+                        frappe.new_doc("Quotation", {}, doc => {
+                            console.log(r.message)
+                            frappe.model.clear_table(doc, "items");
+                            doc.custom_lead = frm.doc.name
+                            r.message.custom_lead_item.forEach(lead_item => {
+                                let quot_item = frappe.model.add_child(doc,"items");
+                                    quot_item.item_code = lead_item.item;
+                                    quot_item.qty = lead_item.quantity; 
+                                    quot_item.rate = lead_item.rate;
+                                    quot_item.amount = lead_item.amount;
+                            })
+                            
+                            frappe.refresh_field("items");
+            
+                        });
+
                     }
                 });
             });
