@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class LocationofVessels(Document):
+class WorkType(Document):
 	pass
