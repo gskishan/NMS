@@ -34,41 +34,47 @@ def get(args=None):
 
 @frappe.whitelist()
 def get_remaining_items_for_planning(sales_order):
-	remaining_items = []
-	sales_order_doc = frappe.get_doc("Sales Order", sales_order)
+    remaining_items = []
+    sales_order_doc = frappe.get_doc("Sales Order", sales_order)
 
-	planning_docs = frappe.get_all("Planning", filters={"sales_order": sales_order}, fields=["name"])
-	
-	planned_quantities = {}
-	for planning in planning_docs:
-		planning_doc = frappe.get_doc("Planning", planning.name)
-		for planned_item in planning_doc.planning_item:
-			item_code = planned_item.item_code
-			qty = planned_item.qty
-			if item_code in planned_quantities:
-				planned_quantities[item_code] += qty
-			else:
-				planned_quantities[item_code] = qty
+    # Get all planning documents for the Sales Order
+    planning_docs = frappe.get_all("Planning", filters={"sales_order": sales_order}, fields=["name"])
 
-	# Check each item in the Sales Order against planned quantities
-	for so_item in sales_order_doc.items:
-		item_code = so_item.item_code
-		ordered_qty = so_item.qty
-		
-		# Calculate the remaining quantity
-		planned_qty = planned_quantities.get(item_code, 0)
-		remaining_qty = ordered_qty - planned_qty
-		
-		if remaining_qty > 0:
-			# Append item document with updated remaining_qty
-			remaining_item = so_item.as_dict() 
-			remaining_item['remaining_qty'] = remaining_qty
-			remaining_items.append(remaining_item)
-	
-	if not remaining_items:
-		frappe.throw("All items for this Sales Order have already been planned")
-	
-	return remaining_items
+    # Calculate completed quantities from planning documents
+    completed_quantities = {}
+    for planning in planning_docs:
+        planning_doc = frappe.get_doc("Planning", planning.name)
+        for planned_item in planning_doc.planning_item:
+            item_code = planned_item.item_code
+            qty = planned_item.qty
+            
+            if item_code in completed_quantities:
+                completed_quantities[item_code] += qty
+            else:
+                completed_quantities[item_code] = qty
+
+    # Check each item in the Sales Order against completed quantities
+    for so_item in sales_order_doc.items:
+        item_code = so_item.item_code
+        original_qty = so_item.qty
+        completed_qty = completed_quantities.get(item_code, 0)
+        balance_qty = original_qty - completed_qty  # Remaining quantity to be planned
+
+        if balance_qty > 0:
+            # Append item document with updated quantities
+            remaining_item = so_item.as_dict()
+            remaining_item['original_so_qty'] = original_qty  # Original Sales Order quantity
+            remaining_item['completed_qty'] = completed_qty  # Total planned quantity
+            remaining_item['balance_qty'] = balance_qty      # Remaining (balance) quantity
+            remaining_item['opened_qty'] = balance_qty       # Same as balance_qty
+            remaining_items.append(remaining_item)
+
+    if not remaining_items:
+        frappe.throw("All items for this Sales Order have already been planned")
+    
+    return remaining_items
+
+
 	
 
 @frappe.whitelist()

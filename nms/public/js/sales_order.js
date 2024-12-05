@@ -15,13 +15,16 @@ frappe.ui.form.on("Sales Order", {
                                 r.message.forEach(so_item => {
                                     let pl_item = frappe.model.add_child(doc,"planning_item");
                                         
-                                        pl_item.item_code = so_item.item_code;
-                                        pl_item.qty = so_item.remaining_qty; 
-                                        pl_item.description = so_item.description;
-                                        pl_item.rate = so_item.rate;
-                                        pl_item.uom = so_item.uom;
-                                        pl_item.uom_conversion_factor = so_item.uom_conversion_factor;
-                                        pl_item.amount = so_item.amount;
+                                    pl_item.item_code = so_item.item_code;
+                                    pl_item.original_so_qty = so_item.original_so_qty;
+                                    pl_item.completed_qty = so_item.completed_qty;   
+                                    pl_item.balanced_qty = so_item.balance_qty;
+                                    pl_item.opened_qty = so_item.opened_qty;   
+                                    pl_item.description = so_item.description;
+                                    pl_item.rate = so_item.rate;
+                                    pl_item.uom = so_item.uom;
+                                    pl_item.uom_conversion_factor = so_item.uom_conversion_factor;
+                                    pl_item.amount = so_item.amount;
                                 })
                                 
                                 frappe.model.clear_table(doc, "items");

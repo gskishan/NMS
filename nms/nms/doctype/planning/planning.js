@@ -18,6 +18,7 @@ frappe.ui.form.on("Planning Item", {
 				  doc:{
 					doctype: "Task",
 					subject:"Please Put the Subject",
+					custom_sales_order: frm.doc.sales_order,
 					custom_customer: frm.doc.customer,
 					custom_planning:frm.doc.name,
 					custom_task_items: [
@@ -25,10 +26,12 @@ frappe.ui.form.on("Planning Item", {
 							item_code: row.item_code,
 							item_name: row.item_name,
 							description: row.description,
+							uom:row.uom,
+							stock_uom: row.stock_uom,
 							qty: row.qty,
 							rate: row.rate,
 							amount: row.amount
-							// Add other fields if required
+							
 						}
 					]
 				  }
