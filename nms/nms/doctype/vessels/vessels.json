@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:vessels",
  "creation": "2024-12-04 13:13:51.704976",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,15 +12,17 @@
   {
    "fieldname": "vessels",
    "fieldtype": "Data",
-   "label": "Vessels"
+   "label": "Vessels",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-04 13:14:06.389553",
+ "modified": "2024-12-05 14:51:17.983649",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Vessels",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

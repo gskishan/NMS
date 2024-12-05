@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
+  "item_name",
+  "uom",
   "quantity",
   "rate",
   "amount"
@@ -36,12 +38,24 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Rate"
+  },
+  {
+   "fetch_from": "item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-20 12:04:46.710591",
+ "modified": "2024-12-05 21:12:44.758415",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Lead Item",

@@ -39,9 +39,12 @@ frappe.ui.form.on("Lead", {
                             console.log(r.message)
                             frappe.model.clear_table(doc, "items");
                             doc.custom_lead = frm.doc.name
+                            doc.party_name = frm.doc.custom_customer_name
                             r.message.custom_lead_item.forEach(lead_item => {
                                 let quot_item = frappe.model.add_child(doc,"items");
                                     quot_item.item_code = lead_item.item;
+                                    quot_item.item_name = lead_item.item_name;
+                                    quot_item.uom = lead_item.uom;
                                     quot_item.qty = lead_item.quantity; 
                                     quot_item.rate = lead_item.rate;
                                     quot_item.amount = lead_item.amount;

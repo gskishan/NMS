@@ -68,7 +68,8 @@
    "fieldname": "lead",
    "fieldtype": "Link",
    "label": "Lead",
-   "options": "Lead"
+   "options": "Lead",
+   "unique": 1
   },
   {
    "fieldname": "column_break_oynx",
@@ -335,7 +336,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-20 23:19:55.956990",
+ "modified": "2024-12-05 21:06:18.570488",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

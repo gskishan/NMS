@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:work_type",
  "creation": "2024-12-04 13:28:41.121179",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,15 +12,17 @@
   {
    "fieldname": "work_type",
    "fieldtype": "Data",
-   "label": "Work Type"
+   "label": "Work Type",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-04 13:29:02.769342",
+ "modified": "2024-12-05 14:50:05.894525",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Work Type",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
