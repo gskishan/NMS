@@ -17,6 +17,11 @@
   "expected_delivery_date",
   "status",
   "create_task",
+  "section_break_qsdx",
+  "vessels",
+  "work_type",
+  "column_break_tktt",
+  "location",
   "description_section",
   "description",
   "column_break_adio",
@@ -383,12 +388,38 @@
    "fieldname": "balanced_qty",
    "fieldtype": "Float",
    "label": "Balanced Qty"
+  },
+  {
+   "fieldname": "section_break_qsdx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vessels",
+   "fieldtype": "Link",
+   "label": "Vessels",
+   "options": "Vessels"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Link",
+   "label": "Work Type",
+   "options": "Work Type"
+  },
+  {
+   "fieldname": "column_break_tktt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-05 21:55:55.469574",
+ "modified": "2024-12-09 20:35:11.798188",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Planning Item",

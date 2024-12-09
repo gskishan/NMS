@@ -10,6 +10,11 @@
   "item_name",
   "description",
   "amount",
+  "section_break_jqfn",
+  "vessels",
+  "work_type",
+  "column_break_onxo",
+  "location",
   "section_break_yhua",
   "qty",
   "rate",
@@ -72,12 +77,38 @@
    "fieldtype": "Link",
    "label": "Stock UOM",
    "options": "UOM"
+  },
+  {
+   "fieldname": "section_break_jqfn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vessels",
+   "fieldtype": "Link",
+   "label": "Vessels",
+   "options": "Vessels"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Link",
+   "label": "Work Type",
+   "options": "Work Type"
+  },
+  {
+   "fieldname": "column_break_onxo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-05 20:14:53.788717",
+ "modified": "2024-12-09 20:38:36.033243",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Task Item Ct",

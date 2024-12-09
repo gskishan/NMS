@@ -21,6 +21,10 @@ frappe.ui.form.on("Planning Item", {
 					custom_sales_order: frm.doc.sales_order,
 					custom_customer: frm.doc.customer,
 					custom_planning:frm.doc.name,
+					custom_client : frm.doc.client,
+					custom_contract_type: frm.doc.contract_type,
+					custom_cost_center: frm.doc.cost_center,
+					project: frm.doc.project,
 					custom_task_items: [
 						{
 							item_code: row.item_code,
@@ -30,7 +34,11 @@ frappe.ui.form.on("Planning Item", {
 							stock_uom: row.stock_uom,
 							qty: row.qty,
 							rate: row.rate,
-							amount: row.amount
+							amount: row.amount,
+							vessels: row.vessels,
+							work_type: row.work_type,
+							location: row.location
+
 							
 						}
 					]

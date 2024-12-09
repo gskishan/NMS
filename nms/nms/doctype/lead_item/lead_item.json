@@ -7,11 +7,17 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
-  "item_name",
-  "uom",
   "quantity",
   "rate",
-  "amount"
+  "amount",
+  "column_break_tuwe",
+  "item_name",
+  "uom",
+  "section_break_mcch",
+  "vessels",
+  "work_type",
+  "column_break_tuap",
+  "location"
  ],
  "fields": [
   {
@@ -50,12 +56,42 @@
    "fieldtype": "Link",
    "label": "UOM",
    "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_tuwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mcch",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vessels",
+   "fieldtype": "Link",
+   "label": "Vessels",
+   "options": "Vessels"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Link",
+   "label": "Work Type",
+   "options": "Work Type"
+  },
+  {
+   "fieldname": "column_break_tuap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-05 21:12:44.758415",
+ "modified": "2024-12-09 18:42:57.480572",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Lead Item",

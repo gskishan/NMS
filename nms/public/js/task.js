@@ -55,9 +55,15 @@ function create_sales_invoice(frm) {
         let si = frappe.model.get_new_doc("Sales Invoice");
 
         if (frm.doc.custom_sales_order) {
-            frappe.db.get_value("Sales Order", frm.doc.custom_sales_order, "customer", (r) => {
-                if (r && r.customer) {
-                    si.customer = r.customer;
+            frappe.db.get_doc("Sales Order", frm.doc.custom_sales_order)
+            .then(so_doc => {
+                if (so_doc && so_doc.customer) {
+                   
+                    si.customer = so_doc.customer;
+                    si.cost_center = so_doc.cost_center;
+                    si.contract_type = so_doc.contract_type;
+                    si.custom_client = so_doc.custom_client;
+                    si.project = so_doc.project;
                 }
 
           
@@ -90,6 +96,9 @@ function create_sales_invoice(frm) {
                                     si_item.uom = item.uom;
                                     si_item.stock_uom = item.uom
                                     si_item.income_account = income_account;
+                                    si_item.custom_vessels = item.vessels;
+                                    si_item.custom_location = item.location;
+                                    si_item.custom_work_type = item.work_type;
 
                                     frappe.model.set_value(si_item.doctype, si_item.name, "income_account", income_account);
                                 }

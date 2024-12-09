@@ -8,10 +8,15 @@ frappe.ui.form.on("Sales Order", {
                     args: { sales_order: frm.doc.name },
                     callback: function(r) {
                         if (r.message && r.message.length > 0) {
+                            console.log(r.message)
                             frappe.new_doc("Planning", {}, doc => {
                                 console.log(r.message)
                                 doc.sales_order = frm.doc.name
                                 doc.customer = frm.doc.customer
+                                doc.client = frm.doc.custom_client
+                                doc.contract_type = frm.doc.contract_type
+                                doc.cost_center = frm.doc.cost_center
+                                doc.project = frm.doc.project
                                 r.message.forEach(so_item => {
                                     let pl_item = frappe.model.add_child(doc,"planning_item");
                                         
@@ -25,6 +30,9 @@ frappe.ui.form.on("Sales Order", {
                                     pl_item.uom = so_item.uom;
                                     pl_item.uom_conversion_factor = so_item.uom_conversion_factor;
                                     pl_item.amount = so_item.amount;
+                                    pl_item.vessels = so_item.custom_vessels;
+                                    pl_item.work_type = so_item.custom_work_type;
+                                    pl_item.location = so_item.custom_location;
                                 })
                                 
                                 frappe.model.clear_table(doc, "items");
@@ -33,6 +41,25 @@ frappe.ui.form.on("Sales Order", {
                         } 
                     }
                 });
+            });
+        }
+        if (frm.doc.custom_quotation) {
+          
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Quotation",
+                    name: frm.doc.custom_quotation,
+                },
+                callback: function (r) {
+                    if (r.message) {
+                        let quotation = r.message;
+                        console.log(quotation.custom_cost_center)
+                        frm.set_value("cost_center", quotation.custom_cost_center);
+                        frm.set_value("project", quotation.custom_project);
+                        frm.set_value("contract_type", quotation.custom_contract_type);
+                    }
+                },
             });
         }
     }

@@ -8,6 +8,12 @@
  "field_order": [
   "customer",
   "sales_order",
+  "accounting_dimensions_section",
+  "client",
+  "cost_center",
+  "column_break_wlbe",
+  "contract_type",
+  "project",
   "section_break_adfw",
   "planning_item",
   "section_break_krnz",
@@ -122,12 +128,46 @@
    "fieldtype": "Table",
    "label": "Fire Consumption",
    "options": "Estimation Ct"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_wlbe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Link",
+   "label": "Contract Type",
+   "options": "Contract Type"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 23:40:19.653676",
+ "modified": "2024-12-09 20:37:10.712105",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Planning",

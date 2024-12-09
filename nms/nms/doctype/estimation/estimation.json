@@ -12,10 +12,15 @@
   "start_date",
   "quotation",
   "column_break_oynx",
-  "project",
   "date",
   "prepared_by",
   "end_date",
+  "accounting_dimensions_section",
+  "client",
+  "cost_center",
+  "column_break_qkfa",
+  "contract_type",
+  "project",
   "section_break_ydim",
   "employees",
   "section_break_hjon",
@@ -135,7 +140,7 @@
    "fieldname": "sub_contractors",
    "fieldtype": "Table",
    "label": "Sub Contractors",
-   "options": "Estimation Ct"
+   "options": "Sub-Contractor CT"
   },
   {
    "fieldname": "additional_costs",
@@ -332,11 +337,39 @@
    "fieldtype": "Link",
    "label": "Quotation",
    "options": "Quotation"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_qkfa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Link",
+   "label": "Contract Type",
+   "options": "Contract Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-05 21:06:18.570488",
+ "modified": "2024-12-09 20:32:48.564628",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",
