@@ -64,6 +64,7 @@ function create_sales_invoice(frm) {
                     si.contract_type = so_doc.contract_type;
                     si.custom_client = so_doc.custom_client;
                     si.project = so_doc.project;
+                    si.custom_task = frm.doc.name;
                 }
 
           
