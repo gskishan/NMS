@@ -7,8 +7,7 @@ frappe.ui.form.on("Project",{
 						"project": frm.doc.name,
 						"client": frm.doc.custom_client,
 						"contract_type": frm.doc.custom_contract_type,
-						"cost_center": frm.doc.custom_cost_center,
-						"project": frm.doc.custom_project
+						"cost_center": frm.doc.cost_center
 					};
 					frappe.set_route("estimation", "new-estimation");
 
