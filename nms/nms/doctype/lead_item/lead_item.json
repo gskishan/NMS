@@ -52,10 +52,12 @@
    "label": "Item Name"
   },
   {
+   "fetch_from": "item.stock_uom",
    "fieldname": "uom",
    "fieldtype": "Link",
    "label": "UOM",
-   "options": "UOM"
+   "options": "UOM",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tuwe",
@@ -91,7 +93,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-09 18:42:57.480572",
+ "modified": "2024-12-10 14:12:16.611533",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Lead Item",

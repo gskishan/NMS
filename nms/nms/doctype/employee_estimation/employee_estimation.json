@@ -18,7 +18,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sub Components",
-   "options": "Item"
+   "options": "Employee"
   },
   {
    "fetch_from": "sub_components.custom_employee_per_day_rate",
@@ -48,7 +48,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-09 19:43:21.525371",
+ "modified": "2024-12-10 14:53:26.510174",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Employee Estimation",

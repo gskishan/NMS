@@ -149,6 +149,9 @@ doc_events = {
 		"on_update": "nms.nms.doctype.planning.planning.update_planning_status",
 		# "on_cancel": "method",
 		# "on_trash": "method"
+	},
+	"Project": {
+		"on_update": "nms.overrides.project.set_project_name_on_lead"
 	}
 }
 

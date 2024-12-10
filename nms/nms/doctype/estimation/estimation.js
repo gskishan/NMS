@@ -41,6 +41,17 @@ function update_estimation_amount(frm,cdt,cdn){
     calculate_totals(frm); // Update totals after amount is set
 
 }
+frappe.ui.form.on("Sub-Contractor CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
 
 function update_employee_estimation_amount(frm, cdt, cdn) {
     let row = locals[cdt][cdn];

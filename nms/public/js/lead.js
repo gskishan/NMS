@@ -22,15 +22,43 @@ frappe.ui.form.on("Lead", {
             });
 
             frm.add_custom_button(__("Estimation"), function() {
-                frappe.route_options = {
-                    "lead": frm.doc.name,
-                    "client": frm.doc.custom_client,
-                    "contract_type": frm.doc.custom_contract_type,
-                    "cost_center": frm.doc.custom_cost_center,
-                    "project": frm.doc.custom_project
-                };
-                frappe.set_route("estimation", "new-estimation");
+               
+                frappe.db.count("Estimation", { filters: { lead: frm.doc.name } })
+                    .then(count => {
+                        if (count > 0) {
+                            frappe.msgprint({
+                                title: __("Error"),
+                                message: __("An estimation has already been created for this lead."),
+                                indicator: "red"
+                            });
+                            return;
+                        }
+                        if (frm.doc.custom_project) {
+                            frappe.db.get_doc("Project", frm.doc.custom_project)
+                                .then(project_doc => {
+                                    frappe.route_options = {
+                                        "lead": frm.doc.name,
+                                        "client": frm.doc.custom_client,
+                                        "contract_type": frm.doc.custom_contract_type,
+                                        "cost_center": frm.doc.custom_cost_center,
+                                        "project": frm.doc.custom_project,
+                                        "expected_start_date": project_doc.expected_start_date,
+                                        "expected_end_date": project_doc.expected_end_date
+                                    };
+                                    frappe.set_route("estimation", "new-estimation");
+                                })
+                        } else {
+                            frappe.route_options = {
+                                "lead": frm.doc.name,
+                                "client": frm.doc.custom_client,
+                                "contract_type": frm.doc.custom_contract_type,
+                                "cost_center": frm.doc.custom_cost_center,
+                            };
+                            frappe.set_route("estimation", "new-estimation");
+                        }
+                    })
             });
+            
 
             frm.add_custom_button("Quotation", function() {
                 frappe.call({
