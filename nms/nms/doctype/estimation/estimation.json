@@ -151,7 +151,7 @@
    "fieldname": "site_consumables",
    "fieldtype": "Table",
    "label": "Site Consumables",
-   "options": "Estimation Ct"
+   "options": "Site Consumable Ct"
   },
   {
    "fieldname": "site_consumable_total",
@@ -368,7 +368,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-10 14:38:27.866582",
+ "modified": "2024-12-13 20:01:33.822911",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

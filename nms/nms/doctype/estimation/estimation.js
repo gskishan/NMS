@@ -25,6 +25,13 @@ frappe.ui.form.on("Estimation Ct",{
     }
 })
 
+frappe.ui.form.on("Site Consumable Ct",{
+    price: function (frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        frappe.model.set_value(cdt, cdn, "amount", row.price);
+        
+    },
+})
 function update_estimation_amount(frm,cdt,cdn){
     let row = locals[cdt][cdn];
 

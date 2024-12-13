@@ -8,20 +8,39 @@ frappe.ui.form.on("Planning Item", {
     rate: function (frm, cdt, cdn) {
         update_amount(frm, cdt, cdn);
     },
-	create_task: function (frm,cdt,cdn) {
+	create_task: function (frm, cdt, cdn) {
 		let row = locals[cdt][cdn];
-
-		if(frm.doc.name){
-			frappe.call({
-				method: "frappe.client.insert",
-				args: {
-				  doc:{
+	
+		let dialog = new frappe.ui.Dialog({
+			title: "Enter Details",
+			fields: [
+				{
+					label: "Is Group",
+					fieldname: "is_group",
+					fieldtype: "Check"
+				},
+				{
+					label: "Subject",
+					fieldname: "subject",
+					fieldtype: "Data"
+				}
+			],
+			primary_action_label: "Create Task",
+			primary_action: function (data) {
+				
+				if (!data.subject) {
+					frappe.msgprint("Subject is required to create a task.");
+					return;
+				}
+	
+				let task_data = {
 					doctype: "Task",
-					subject:"Please Put the Subject",
+					subject: data.subject,
+					is_group: data.is_group ? 1 : 0,
 					custom_sales_order: frm.doc.sales_order,
 					custom_customer: frm.doc.customer,
-					custom_planning:frm.doc.name,
-					custom_client : frm.doc.client,
+					custom_planning: frm.doc.name,
+					custom_client: frm.doc.client,
 					custom_contract_type: frm.doc.contract_type,
 					custom_cost_center: frm.doc.cost_center,
 					project: frm.doc.project,
@@ -30,7 +49,7 @@ frappe.ui.form.on("Planning Item", {
 							item_code: row.item_code,
 							item_name: row.item_name,
 							description: row.description,
-							uom:row.uom,
+							uom: row.uom,
 							stock_uom: row.stock_uom,
 							qty: row.qty,
 							rate: row.rate,
@@ -38,27 +57,28 @@ frappe.ui.form.on("Planning Item", {
 							vessels: row.vessels,
 							work_type: row.work_type,
 							location: row.location
-
-							
 						}
 					]
-				  }
-				  
-				},
-				callback: function(r) {
-					if (!r.exc) {
-                        frappe.msgprint(`Task created successfully: ${r.message.name}`);
-                    } else {
-                        frappe.msgprint(`Error creating Task`);
-                    }
-				}
-			  });
-			
-		
-		}
-        
+				};
+
+				frappe.call({
+					method: "frappe.client.insert",
+					args: { doc: task_data },
+					callback: function (r) {
+						if (!r.exc) {
+							frappe.msgprint(`Task created successfully: ${r.message.name}`);
+							dialog.hide();
+						} else {
+							frappe.msgprint(`Error creating Task`);
+						}
+					}
+				});
+			}
+		});
 	
-    },
+		// Show the dialog
+		dialog.show();
+	}
 });
 
 function update_amount(frm, cdt, cdn) {

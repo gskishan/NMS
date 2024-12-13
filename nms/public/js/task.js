@@ -37,9 +37,12 @@ function manage_buttons(frm) {
         });
     }
 
+   
     if (frm.doc.custom_is_daily_report) {
         frm.add_custom_button(__('Daily Report'), function () {
-            frappe.new_doc('Daily Report');
+            frappe.new_doc('Daily Report',{},doc =>{
+                doc.task = frm.doc.name
+            });
         });
     }
 

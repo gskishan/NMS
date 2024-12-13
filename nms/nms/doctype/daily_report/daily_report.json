@@ -9,12 +9,19 @@
   "column_break_hxeh",
   "date",
   "section_break_norn",
-  "client",
   "site",
   "remarks",
+  "custom_sales_order",
+  "custom_planning",
+  "task",
   "column_break_zpyb",
-  "equipment",
   "personal",
+  "accounting_dimensions_section",
+  "custom_client",
+  "custom_cost_center",
+  "column_break_qgnr",
+  "custom_contract_type",
+  "project",
   "section_break_quex",
   "work_carried_out",
   "section_break_xzef",
@@ -40,12 +47,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "client",
-   "fieldtype": "Link",
-   "label": "Client",
-   "options": "Customer"
-  },
-  {
    "fieldname": "site",
    "fieldtype": "Link",
    "label": "Site",
@@ -59,12 +60,6 @@
   {
    "fieldname": "column_break_zpyb",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "equipment",
-   "fieldtype": "Link",
-   "label": "Equipment",
-   "options": "Asset"
   },
   {
    "fieldname": "personal",
@@ -88,13 +83,69 @@
   {
    "fieldname": "consumables",
    "fieldtype": "Table",
-   "label": "Consumables",
    "options": "Consumables Ct"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions "
+  },
+  {
+   "fieldname": "column_break_qgnr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "task.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "task.custom_client",
+   "fieldname": "custom_client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "task.custom_cost_center",
+   "fieldname": "custom_cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fetch_from": "task.custom_contract_type",
+   "fieldname": "custom_contract_type",
+   "fieldtype": "Link",
+   "label": "Contract Type",
+   "options": "Contract Type"
+  },
+  {
+   "fetch_from": "task.custom_sales_order",
+   "fieldname": "custom_sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fetch_from": "task.custom_planning",
+   "fieldname": "custom_planning",
+   "fieldtype": "Link",
+   "label": "Planning",
+   "options": "Planning"
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 21:42:25.646339",
+ "modified": "2024-12-13 19:57:43.183850",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",
