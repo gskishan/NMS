@@ -9,10 +9,17 @@
   "amended_from",
   "customer",
   "starting_date_of_project",
+  "task",
   "column_break_aetg",
   "project_name",
   "location",
   "ending_date_of_project",
+  "accounting_dimensions_section",
+  "client",
+  "cost_center",
+  "column_break_carw",
+  "contract_type",
+  "project",
   "section_break_shut",
   "daily_check_ct"
  ],
@@ -72,12 +79,51 @@
   {
    "fieldname": "section_break_shut",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_carw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Link",
+   "label": "Contract Type",
+   "options": "Contract Type"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-20 23:10:18.906603",
+ "modified": "2024-12-18 23:59:12.037545",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Meal",

@@ -11,8 +11,6 @@
   "section_break_norn",
   "site",
   "remarks",
-  "custom_sales_order",
-  "custom_planning",
   "task",
   "column_break_zpyb",
   "personal",
@@ -125,26 +123,6 @@
    "options": "Contract Type"
   },
   {
-   "fetch_from": "task.custom_sales_order",
-   "fieldname": "custom_sales_order",
-   "fieldtype": "Link",
-   "label": "Sales Order",
-   "options": "Sales Order"
-  },
-  {
-   "fetch_from": "task.custom_planning",
-   "fieldname": "custom_planning",
-   "fieldtype": "Link",
-   "label": "Planning",
-   "options": "Planning"
-  },
-  {
-   "fieldname": "task",
-   "fieldtype": "Link",
-   "label": "Task",
-   "options": "Task"
-  },
-  {
    "fieldname": "employee",
    "fieldtype": "Table",
    "options": "Employee CT"
@@ -153,11 +131,17 @@
    "fieldname": "equipment",
    "fieldtype": "Table",
    "options": "Equipment CT"
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-18 15:05:40.771827",
+ "modified": "2024-12-18 23:57:41.038462",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

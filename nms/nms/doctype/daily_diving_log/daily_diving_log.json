@@ -33,7 +33,14 @@
   "bailout_two",
   "column_break_edri",
   "tender_two",
-  "column_break_puew",
+  "column_break_cmvc",
+  "task",
+  "accounting_dimensions_section",
+  "client",
+  "cost_center",
+  "column_break_gykw",
+  "contract_type",
+  "project",
   "section_break_ehgs",
   "table_mvkh",
   "section_break_pkhw",
@@ -171,10 +178,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_puew",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_ehgs",
    "fieldtype": "Section Break"
   },
@@ -209,11 +212,58 @@
    "fieldname": "diving_supervisor",
    "fieldtype": "Data",
    "label": "Diving Supervisor"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fetch_from": "task.custom_client",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "task.custom_cost_center",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fetch_from": "task.custom_contract_type",
+   "fieldname": "contract_type",
+   "fieldtype": "Link",
+   "label": "Contract Type",
+   "options": "Contract Type"
+  },
+  {
+   "fetch_from": "task.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_gykw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cmvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 20:53:51.285640",
+ "modified": "2024-12-19 00:01:48.024508",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Diving Log",

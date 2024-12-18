@@ -33,7 +33,13 @@ function manage_buttons(frm) {
 
     if (frm.doc.custom_is_daily_divine_log) {
         frm.add_custom_button(__('Daily Diving Log'), function () {
-            frappe.new_doc('Daily Diving Log');
+            frappe.new_doc('Daily Diving Log',{},doc =>{
+                doc.task = frm.doc.name
+                doc.client = frm.doc.custom_client
+                doc.cost_center = frm.doc.custom_cost_center
+                doc.contract_type = frm.doc.custom_contract_type
+                doc.project = frm.doc.project
+            });
         });
     }
 
@@ -42,13 +48,23 @@ function manage_buttons(frm) {
         frm.add_custom_button(__('Daily Report'), function () {
             frappe.new_doc('Daily Report',{},doc =>{
                 doc.task = frm.doc.name
+                doc.custom_client = frm.doc.custom_client
+                doc.custom_cost_center = frm.doc.custom_cost_center
+                doc.custom_contract_type = frm.doc.custom_contract_type
+                doc.project = frm.doc.project
             });
         });
     }
 
     if (frm.doc.custom_is_meal) {
         frm.add_custom_button(__('Meal'), function () {
-            frappe.new_doc('Meal');
+            frappe.new_doc('Meal',{},doc => {
+                doc.task = frm.doc.name
+                doc.client = frm.doc.custom_client
+                doc.cost_center = frm.doc.custom_cost_center
+                doc.contract_type = frm.doc.custom_contract_type
+                doc.project = frm.doc.project
+            });
         });
     }
 }
