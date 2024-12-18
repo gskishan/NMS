@@ -23,6 +23,9 @@ frappe.ui.form.on("Sales Order", {
                                 doc.sales_order = frm.doc.name
                                 doc.customer = frm.doc.customer
                                 doc.client = frm.doc.custom_client
+                                doc.lead = frm.doc.custom_lead
+                                doc.estimation = frm.doc.custom_estimation
+                                doc.quotation = frm.doc.custom_quotation
                                 doc.contract_type = frm.doc.contract_type
                                 doc.cost_center = frm.doc.cost_center
                                 doc.project = frm.doc.project

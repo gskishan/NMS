@@ -10,7 +10,6 @@
   "job",
   "state",
   "start_date",
-  "quotation",
   "column_break_oynx",
   "date",
   "prepared_by",
@@ -332,12 +331,6 @@
    "label": "Subtotal-Fuel Consumption"
   },
   {
-   "fieldname": "quotation",
-   "fieldtype": "Link",
-   "label": "Quotation",
-   "options": "Quotation"
-  },
-  {
    "collapsible": 1,
    "fieldname": "accounting_dimensions_section",
    "fieldtype": "Section Break",
@@ -368,7 +361,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-18 15:57:07.085360",
+ "modified": "2024-12-18 17:13:57.917952",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

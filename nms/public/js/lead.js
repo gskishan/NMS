@@ -73,6 +73,7 @@ frappe.ui.form.on("Lead", {
                             frappe.model.clear_table(doc, "items");
                             doc.custom_lead = frm.doc.name
                             doc.party_name = frm.doc.custom_customer_name
+                            doc.custom_estimation = frm.doc.custom_estimation
                             doc.custom_client = frm.doc.custom_client
                             doc.custom_contract_type = frm.doc.custom_contract_type
                             doc.custom_cost_center = frm.doc.custom_cost_center

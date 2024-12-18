@@ -68,6 +68,11 @@ function create_sales_invoice(frm) {
                     si.custom_client = so_doc.custom_client;
                     si.project = so_doc.project;
                     si.custom_task = frm.doc.name;
+                    si.custom_sales_order = frm.doc.custom_sales_order,
+                    si.custom_lead = frm.doc.custom_lead,
+                    si.custom_planning = frm.doc.custom_planning,
+                    si.custom_estimation = frm.doc.custom_estimation,
+                    si.custom_quotation =  frm.doc.custom_quotation
                 }
 
           
