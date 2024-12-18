@@ -25,6 +25,8 @@
   "section_break_quex",
   "work_carried_out",
   "section_break_xzef",
+  "equipment",
+  "employee",
   "consumables"
  ],
  "fields": [
@@ -141,11 +143,21 @@
    "fieldtype": "Link",
    "label": "Task",
    "options": "Task"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Table",
+   "options": "Employee CT"
+  },
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Table",
+   "options": "Equipment CT"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-13 19:57:43.183850",
+ "modified": "2024-12-18 15:05:40.771827",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

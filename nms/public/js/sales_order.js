@@ -1,4 +1,13 @@
 frappe.ui.form.on("Sales Order", {
+    onload: function (frm) {
+            if (frm.doc.custom_quotation) {
+                frappe.db.get_doc("Quotation", frm.doc.custom_quotation).then((doc) => {
+                    frm.set_value("custom_quotation_date", doc.transaction_date);
+                })
+            }
+        
+    },
+    
     refresh: function(frm) {
         if (!frm.is_new() && frm.doc.docstatus == 1) {
             frm.add_custom_button(__("Create Planning"), function() {

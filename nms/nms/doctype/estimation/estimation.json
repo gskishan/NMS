@@ -324,7 +324,7 @@
    "fieldname": "fuel_consumption",
    "fieldtype": "Table",
    "label": "Fuel Consumption",
-   "options": "Estimation Ct"
+   "options": "Fuel Consumption CT"
   },
   {
    "fieldname": "fuel_consumption_total",
@@ -368,7 +368,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-13 20:01:33.822911",
+ "modified": "2024-12-18 15:57:07.085360",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",
