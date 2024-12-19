@@ -1,29 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-10-25 16:53:17.195918",
+ "creation": "2024-12-19 09:42:12.434707",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "employee"
+  "equipment",
+  "column_break_vhlt",
+  "qty"
  ],
  "fields": [
   {
-   "fieldname": "employee",
+   "fieldname": "equipment",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Employee",
-   "options": "Employee"
+   "label": "Equipment",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "column_break_vhlt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-19 09:44:18.341032",
+ "modified": "2024-12-19 09:42:36.573429",
  "modified_by": "Administrator",
  "module": "Nms",
- "name": "Employee CT",
+ "name": "Equipment Daily CT",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

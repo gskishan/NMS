@@ -62,6 +62,10 @@
   "column_break_mbok",
   "column_break_aujl",
   "fuel_consumption_total",
+  "section_break_cavx",
+  "column_break_qpeq",
+  "column_break_cbsg",
+  "main_total",
   "section_break_kyrm",
   "asset",
   "section_break_nbmb",
@@ -365,12 +369,29 @@
    "fieldtype": "Link",
    "label": "Quotation",
    "options": "Quotation"
+  },
+  {
+   "fieldname": "section_break_cavx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qpeq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cbsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_total",
+   "fieldtype": "Float",
+   "label": "Main Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-18 17:35:04.209712",
+ "modified": "2024-12-19 09:40:29.150080",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Planning",

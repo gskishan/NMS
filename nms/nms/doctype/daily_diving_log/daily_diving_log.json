@@ -48,7 +48,8 @@
   "column_break_blrm",
   "divers_condition",
   "column_break_xtbt",
-  "diving_supervisor"
+  "diving_supervisor",
+  "amended_from"
  ],
  "fields": [
   {
@@ -259,11 +260,22 @@
    "fieldtype": "Link",
    "label": "Task",
    "options": "Task"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Diving Log",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-12-19 00:01:48.024508",
+ "modified": "2024-12-19 09:46:20.240949",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Diving Log",

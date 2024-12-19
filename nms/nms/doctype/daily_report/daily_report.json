@@ -25,7 +25,8 @@
   "section_break_xzef",
   "equipment",
   "employee",
-  "consumables"
+  "consumables",
+  "amended_from"
  ],
  "fields": [
   {
@@ -125,23 +126,34 @@
   {
    "fieldname": "employee",
    "fieldtype": "Table",
-   "options": "Employee CT"
+   "options": "Employee Daily CT"
   },
   {
    "fieldname": "equipment",
    "fieldtype": "Table",
-   "options": "Equipment CT"
+   "options": "Equipment Daily CT"
   },
   {
    "fieldname": "task",
    "fieldtype": "Link",
    "label": "Task",
    "options": "Task"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Report",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-12-18 23:57:41.038462",
+ "modified": "2024-12-19 09:46:08.693354",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

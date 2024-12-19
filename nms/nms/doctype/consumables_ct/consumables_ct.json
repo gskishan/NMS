@@ -6,7 +6,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "consumables"
+  "consumables",
+  "column_break_ppmf",
+  "qty"
  ],
  "fields": [
   {
@@ -15,12 +17,22 @@
    "in_list_view": 1,
    "label": "Consumables",
    "options": "Item"
+  },
+  {
+   "fieldname": "column_break_ppmf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-18 15:43:41.271231",
+ "modified": "2024-12-19 09:45:27.882448",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Consumables Ct",
