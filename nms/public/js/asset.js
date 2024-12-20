@@ -1,6 +1,6 @@
 frappe.ui.form.on("Asset", {
     refresh: function(frm) {
-        if (!frm.is_new() && frm.doc.docstatus == 1) {
+        if (!frm.is_new()) {
             frm.add_custom_button(__("Asset Maintenance Request"), function() {
            
                 frappe.new_doc("Asset Maintenance Request", {}, doc => {
