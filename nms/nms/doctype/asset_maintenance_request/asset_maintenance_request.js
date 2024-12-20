@@ -12,8 +12,8 @@ frappe.ui.form.on("Asset Maintenance Request", {
                     tempDiv.innerHTML = issue_html;
                     const plainText = tempDiv.innerText || tempDiv.textContent || "";
 
-                    doc.issue_in_the_asset = plainText;
-                    
+                    doc.custom_issue_in_the_asset = plainText;
+
                     frappe.set_route("Form", "Asset Maintenance Log", doc.name);
                 });
             });
