@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-19 16:14:30.204600",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "children_name",
+  "column_break_yyss",
+  "children_dob"
+ ],
+ "fields": [
+  {
+   "fieldname": "children_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Children Name"
+  },
+  {
+   "fieldname": "column_break_yyss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "children_dob",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Children DOB"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-19 16:15:28.620605",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Children CT",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

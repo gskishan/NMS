@@ -1,15 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-12-19 09:44:30.922646",
+ "creation": "2024-12-25 22:50:05.630875",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "employee",
-  "per_day_rate",
-  "column_break_onuw",
-  "qty"
+  "from_time",
+  "to_time",
+  "remarks"
  ],
  "fields": [
   {
@@ -20,30 +20,31 @@
    "options": "Employee"
   },
   {
-   "fieldname": "column_break_onuw",
-   "fieldtype": "Column Break"
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "From Time"
   },
   {
-   "fieldname": "qty",
-   "fieldtype": "Float",
+   "fieldname": "to_time",
+   "fieldtype": "Time",
    "in_list_view": 1,
-   "label": "Qty"
+   "label": "To Time"
   },
   {
-   "fetch_from": "employee.custom_employee_per_day_rate",
-   "fieldname": "per_day_rate",
-   "fieldtype": "Float",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Per Day Rate"
+   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-24 23:02:20.028332",
+ "modified": "2024-12-25 22:54:15.984696",
  "modified_by": "Administrator",
  "module": "Nms",
- "name": "Employee Daily CT",
+ "name": "Employee Daily Report OT",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

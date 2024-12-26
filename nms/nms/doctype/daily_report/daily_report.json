@@ -20,6 +20,8 @@
   "column_break_qgnr",
   "custom_contract_type",
   "project",
+  "section_break_ecwb",
+  "employee_shift",
   "section_break_quex",
   "work_carried_out",
   "section_break_xzef",
@@ -148,12 +150,21 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "section_break_ecwb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_shift",
+   "fieldtype": "Table",
+   "options": "Employee Daily Report OT"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-19 09:46:08.693354",
+ "modified": "2024-12-25 22:56:03.134179",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-19 17:00:49.811634",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_cems",
+  "amended_from",
+  "employee",
+  "employee_category",
+  "column_break_tgpi",
+  "number_of_working_days",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_cems",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Air Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "employee_category",
+   "fieldtype": "Link",
+   "label": "Employee Category",
+   "options": "Category"
+  },
+  {
+   "fieldname": "column_break_tgpi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_category.no_of_working_days",
+   "fieldname": "number_of_working_days",
+   "fieldtype": "Data",
+   "label": "Number Of Working Days"
+  },
+  {
+   "fetch_from": "employee_category.amount",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-19 20:17:15.465316",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Air Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -17,5 +17,16 @@ frappe.ui.form.on("Meal", {
                     frappe.new_doc("Journal Entry");
                 });
     }
-}
+},
+    validate: function (frm) {
+        frm.doc.type_of_meal.forEach(child => {
+            if (child.meal_amount > child.amount) {
+                frappe.throw(`Meal amount for ${child.type_of_meal} exceeds the limit of ${child.amount}.`);
+            }
+
+            if (child.meal_amount < child.amount && !child.attach_ervs) {
+                frappe.throw(`Attach a document for ${child.type_of_meal}.`);
+            }
+        });
+    }
 });
