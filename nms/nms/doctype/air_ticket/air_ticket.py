@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.utils import date_diff, today
-
+from frappe.model.document import Document
 
 
 class AirTicket(Document):
@@ -28,7 +28,7 @@ def validate_attendance(employee, air_ticket_working_days):
     )
 
     if attendance_count < int(air_ticket_working_days):
-        return False  # Validation failed
+        return False 
 
-    return True  # Validation passed
+    return True 
 	
