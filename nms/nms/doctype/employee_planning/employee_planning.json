@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-26 22:53:23.006443",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sub_components",
+  "price",
+  "day",
+  "amount",
+  "remark",
+  "section_break_mnwj",
+  "reservation_start_date",
+  "column_break_vqlu",
+  "reservation_end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "sub_components",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sub Components",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "sub_components.custom_employee_per_day_rate",
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Per Day Rate"
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No. of Days"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text Editor",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "section_break_mnwj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reservation_start_date",
+   "fieldtype": "Date",
+   "label": "Reservation Start Date"
+  },
+  {
+   "fieldname": "column_break_vqlu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reservation_end_date",
+   "fieldtype": "Date",
+   "label": "Reservation End Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-26 22:54:10.250676",
+ "modified_by": "Administrator",
+ "module": "Nms",
+ "name": "Employee Planning",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

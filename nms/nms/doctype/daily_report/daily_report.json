@@ -26,9 +26,27 @@
   "work_carried_out",
   "section_break_xzef",
   "equipment",
+  "amended_from",
+  "section_break_arnf",
+  "column_break_sfnc",
+  "column_break_uzwu",
+  "subtotal_equipments",
+  "section_break_acpc",
   "employee",
+  "section_break_siiu",
+  "column_break_dapw",
+  "column_break_yexs",
+  "subtotal_employee",
+  "section_break_xcuq",
   "consumables",
-  "amended_from"
+  "section_break_wyrf",
+  "column_break_xaxb",
+  "column_break_bskr",
+  "subtotal_consumables",
+  "section_break_lnzo",
+  "column_break_aqqq",
+  "column_break_whrj",
+  "main_total"
  ],
  "fields": [
   {
@@ -159,12 +177,88 @@
    "fieldname": "employee_shift",
    "fieldtype": "Table",
    "options": "Employee Daily Report OT"
+  },
+  {
+   "fieldname": "section_break_siiu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dapw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yexs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subtotal_employee",
+   "fieldtype": "Float",
+   "label": "Subtotal Employee"
+  },
+  {
+   "fieldname": "section_break_wyrf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xaxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bskr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subtotal_equipments",
+   "fieldtype": "Float",
+   "label": "Subtotal Equipments"
+  },
+  {
+   "fieldname": "section_break_arnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_sfnc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uzwu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subtotal_consumables",
+   "fieldtype": "Float",
+   "label": "Subtotal Consumables"
+  },
+  {
+   "fieldname": "section_break_acpc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_xcuq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_lnzo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_aqqq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_whrj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_total",
+   "fieldtype": "Float",
+   "label": "Main Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-25 22:56:03.134179",
+ "modified": "2024-12-27 00:45:51.066511",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

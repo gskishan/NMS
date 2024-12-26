@@ -57,7 +57,7 @@
   "column_break_obik",
   "site_consumable_total",
   "section_break_xqwy",
-  "fire_consumption",
+  "fuel_consumption",
   "section_break_krnz",
   "column_break_mbok",
   "column_break_aujl",
@@ -67,9 +67,6 @@
   "column_break_cbsg",
   "main_total",
   "section_break_kyrm",
-  "asset",
-  "section_break_nbmb",
-  "employee",
   "amended_from"
  ],
  "fields": [
@@ -88,22 +85,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "asset",
-   "fieldtype": "Table",
-   "label": "Asset",
-   "options": "Asset Required"
-  },
-  {
-   "fieldname": "section_break_nbmb",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "employee",
-   "fieldtype": "Table",
-   "label": "Employee",
-   "options": "Employee CT"
-  },
-  {
    "fieldname": "sales_order",
    "fieldtype": "Link",
    "label": "Sales Order",
@@ -116,16 +97,6 @@
    "options": "Planning Item"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Planning",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "section_break_krnz",
    "fieldtype": "Section Break"
   },
@@ -133,13 +104,13 @@
    "fieldname": "employees",
    "fieldtype": "Table",
    "label": "Employees",
-   "options": "Employee Estimation"
+   "options": "Employee Planning"
   },
   {
    "fieldname": "equipments",
    "fieldtype": "Table",
    "label": "Equipments",
-   "options": "Estimation Ct"
+   "options": "Asset Planning CT"
   },
   {
    "fieldname": "boats_and_vehicles",
@@ -164,12 +135,6 @@
    "fieldtype": "Table",
    "label": "Site Consumables",
    "options": "Site Consumable Ct"
-  },
-  {
-   "fieldname": "fire_consumption",
-   "fieldtype": "Table",
-   "label": "Fire Consumption",
-   "options": "Fuel Consumption CT"
   },
   {
    "collapsible": 1,
@@ -386,12 +351,28 @@
    "fieldname": "main_total",
    "fieldtype": "Float",
    "label": "Main Total"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Planning",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "fuel_consumption",
+   "fieldtype": "Table",
+   "label": "Fuel Consumption",
+   "options": "Fuel Consumption CT"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-19 09:40:29.150080",
+ "modified": "2024-12-27 00:04:50.389439",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Planning",

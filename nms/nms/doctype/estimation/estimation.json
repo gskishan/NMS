@@ -126,7 +126,7 @@
    "fieldname": "equipments",
    "fieldtype": "Table",
    "label": "Equipments",
-   "options": "Estimation Ct"
+   "options": "Asset Estimation CT"
   },
   {
    "fieldname": "boats_and_vehicles",
@@ -361,7 +361,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-18 17:13:57.917952",
+ "modified": "2024-12-27 00:23:02.599373",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",

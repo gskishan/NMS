@@ -13,7 +13,80 @@ from frappe.desk.doctype.notification_log.notification_log import (
 
 
 class Planning(Document):
-	pass
+
+	def validate(self):
+		for row in self.employees:
+			if row.reservation_start_date and row.reservation_end_date:
+				self.check_reservation_overlap(
+					row.sub_components, 
+					row.reservation_start_date, 
+					row.reservation_end_date, 
+					"tabEmployee Planning", 
+					"sub_components"
+				)
+
+		for row in self.equipments:
+			if row.asset_required:
+				self.check_asset_availability(row.asset_required)
+			if row.reservation_start_date and row.reservation_end_date:
+				self.check_reservation_overlap(
+					row.asset_required, 
+					row.reservation_start_date, 
+					row.reservation_end_date, 
+					"tabAsset Planning CT",  
+					"asset_required"
+				)
+
+	def check_reservation_overlap(self, entity, start_date, end_date, child_table, entity_field):
+		"""
+		Generic method to check for overlapping reservations for a given entity (employee or asset).
+		"""
+
+		overlaps = frappe.db.sql(f"""
+			SELECT
+				parent, {entity_field}, reservation_start_date, reservation_end_date
+			FROM
+				`{child_table}`
+			WHERE
+				{entity_field} = %s
+				AND parent != %s  
+				AND (
+					(reservation_start_date BETWEEN %s AND %s)
+					OR (reservation_end_date BETWEEN %s AND %s)
+					OR (%s BETWEEN reservation_start_date AND reservation_end_date)
+				)
+		""", (
+			entity,
+			self.name,
+			start_date, end_date,
+			start_date, end_date,
+			start_date
+		))
+
+		if overlaps:
+			frappe.throw(
+				frappe._(
+					"{0} {1} already has a reservation between {2} and {3} in document {4}."
+				).format(
+					entity_field.capitalize(),
+					entity,                     
+					overlaps[0][2],            
+					overlaps[0][3],             
+					overlaps[0][0]              
+				)
+			)
+	def check_asset_availability(self, asset):
+		"""
+		Check if the given asset is in 'planned' or 'overdue' state in the Asset Maintenance Log.
+		"""
+		asset_status = frappe.db.get_value('Asset Maintenance Log', {
+			'asset_name': asset,
+			'docstatus': 0
+		}, 'maintenance_status')
+
+		if asset_status in ['Planned', 'Overdue']:
+			frappe.throw(f"Asset {asset} is in {asset_status} state and cannot be reserved.")
+
 
 
 def get(args=None):

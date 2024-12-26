@@ -99,7 +99,7 @@ function update_amount(frm, cdt, cdn) {
     frm.refresh_field("planning_item");
 }
 
-frappe.ui.form.on("Employee Estimation",{
+frappe.ui.form.on("Employee Planning",{
     price: function (frm, cdt, cdn) {
         update_employee_estimation_amount(frm, cdt, cdn);
     },
@@ -147,6 +147,30 @@ function update_estimation_amount(frm,cdt,cdn){
 
 }
 frappe.ui.form.on("Sub-Contractor CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
+
+frappe.ui.form.on("Asset Planning CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
+
+frappe.ui.form.on("Fuel Consumption CT",{
     price: function (frm, cdt, cdn) {
         update_estimation_amount(frm, cdt, cdn);
     },

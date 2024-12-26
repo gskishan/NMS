@@ -2,99 +2,77 @@
 # For license information, please see license.txt
 import frappe
 from frappe.model.document import Document
+from frappe.utils import time_diff_in_hours
 from datetime import datetime
 
 class DailyReport(Document):
 	def on_submit(self):
+		self.validate_attendance()
 		self.mark_auto_attendance()
+
+	def validate_attendance(self):
+		"""Check if attendance already exists for any employee."""
+		for emp in self.employee_shift:
+			if emp.employee:
+				attendance_exists = frappe.db.exists(
+					"Attendance", {"employee": emp.employee, "attendance_date": self.date}
+				)
+				if attendance_exists:
+					frappe.throw(
+						f"Attendance for employee {emp.employee} on {self.date} already exists. Please check and try again.",
+						title="Attendance Already Marked"
+					)
 
 	def mark_auto_attendance(self):
 		for emp in self.employee_shift:
 			if emp.employee:
-				# Get Employee Document
 				emp_doc = frappe.get_doc("Employee", emp.employee)
 
-				# Check for Default Shift
 				if emp_doc.default_shift:
 					shift_doc = frappe.get_doc("Shift Type", emp_doc.default_shift)
-					# Parse shift timings
-					shift_start_time = datetime.strptime(shift_doc.start_time, "%H:%M:%S").time()
+					
+					shift_start_time = shift_doc.start_time
 
-					shift_end_time = datetime.strptime(shift_doc.end_time, "%H:%M:%S").time()
+					shift_end_time = shift_doc.end_time
 
-					# Parse Daily Report timings
-					report_from_time = datetime.strptime(emp.from_time, "%H:%M:%S").time()
-					report_to_time = datetime.strptime(emp.to_time, "%H:%M:%S").time()
+					report_from_time = emp.from_time
+					report_to_time = emp.to_time
 
-					# Initialize OT Hours
 					overtime_hours = 0
 
-					# Case: Exact match with shift timings
-					if report_from_time == shift_start_time and report_to_time == shift_end_time:
-						self.create_or_update_attendance(emp.employee, self.date, overtime_hours, False, False)
-						continue  # Skip further checks for this employee
+					shift_time_diff = time_diff_in_hours(shift_end_time,shift_start_time)
+					emp_time_diff = time_diff_in_hours(report_to_time,report_from_time)
 
-					# Case: Started earlier or finished later
-					if report_from_time < shift_start_time:
-						print("\n\n\n report_from_time",report_from_time)
-						print("\n\n\n shift start time",shift_start_time)
-						overtime_hours += (
-							datetime.combine(datetime.today(), shift_start_time) - 
-							datetime.combine(datetime.today(), report_from_time)
-						).seconds / 3600
+					overtime_hours = emp_time_diff - shift_time_diff if emp_time_diff > shift_time_diff else 0
 
-					if report_to_time > shift_end_time:
-						print("\n\n\n report_to_time",report_to_time)
-						print("\n\n\n shift_end_time",shift_end_time)
-						overtime_hours += (
-							datetime.combine(datetime.today(), report_to_time) - 
-							datetime.combine(datetime.today(), shift_end_time)
-						).seconds / 3600
-
-					# Case: Both earlier start and later finish
-					if report_from_time < shift_start_time and report_to_time > shift_end_time:
-						print("\n\n\n report_to_time",report_to_time)
-						print("\n\n\n shift_end_time",shift_end_time)
-						print("\n\n\n report_from_time",report_from_time)
-						print("\n\n\n shift_start_time",shift_start_time)
-						overtime_hours += (
-							datetime.combine(datetime.today(), shift_start_time) - 
-							datetime.combine(datetime.today(), report_from_time)
-						).seconds / 3600
-						overtime_hours += (
-							datetime.combine(datetime.today(), report_to_time) - 
-							datetime.combine(datetime.today(), shift_end_time)
-						).seconds / 3600
-					print("\n\n\n overtime",overtime_hours)
+					# late_entry = report_from_time > shift_start_time
+					# leave_early = report_to_time < shift_end_time
+					
 					# Create or update attendance
 					self.create_or_update_attendance(
-						emp.employee, 
+						emp_doc, 
 						self.date, 
-						round(overtime_hours, 2), 
-						report_from_time > shift_start_time, 
-						report_to_time < shift_end_time
+						round(overtime_hours, 2)
 					)
 
-	def create_or_update_attendance(self, employee, attendance_date, overtime_hours, late_entry, leave_early):
+	def create_or_update_attendance(self, employee, attendance_date, overtime_hours):
 		"""Create or update the attendance record for an employee."""
 		# Check for existing attendance
 		attendance_name = frappe.db.exists(
-			"Attendance", {"employee": employee, "attendance_date": attendance_date}
+			"Attendance", {"employee": employee.name, "attendance_date": attendance_date}
 		)
-		if attendance_name:
-			attendance = frappe.get_doc("Attendance", attendance_name)
-		else:
+		if not attendance_name:
 			attendance = frappe.new_doc("Attendance")
-			attendance.employee = employee
+			attendance.employee = employee.name
 			attendance.attendance_date = attendance_date
 
 		# Update Attendance Fields
 		attendance.status = "Present"
-		attendance.late_entry = late_entry
-		attendance.leave_early = leave_early
 		attendance.custom_overtime = overtime_hours > 0
+		attendance.shift = employee.default_shift
 		attendance.custom_overtime_hours = overtime_hours
 
 		# Save Attendance
 		attendance.save()
+		attendance.submit()
 		frappe.msgprint(f"Attendance updated for {employee}")

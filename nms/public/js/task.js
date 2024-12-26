@@ -14,7 +14,7 @@ frappe.ui.form.on("Task", {
     custom_is_meal: function (frm) {
         manage_buttons(frm);
     },
-    is_group: function(frm){
+    custom_is_invoice: function(frm){
         manage_buttons(frm)
     }
     
@@ -25,7 +25,7 @@ function manage_buttons(frm) {
     frm.clear_custom_buttons();
 
 
-    if (frm.doc.is_group) {
+    if (frm.doc.custom_is_invoice) {
         frm.add_custom_button(__('Sales Invoice'), function () {
             create_sales_invoice(frm);
         }, __("Create"));

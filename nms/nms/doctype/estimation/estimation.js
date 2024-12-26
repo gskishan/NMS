@@ -25,13 +25,40 @@ frappe.ui.form.on("Estimation Ct",{
     }
 })
 
+frappe.ui.form.on("Asset Estimation CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
+
+frappe.ui.form.on("Fuel Consumption CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
+
 frappe.ui.form.on("Site Consumable Ct",{
     price: function (frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
-        frappe.model.set_value(cdt, cdn, "amount", row.price);
-        frm.refresh_field("site_consumables")
-        calculate_totals(frm)
+        update_estimation_amount(frm, cdt, cdn);
     },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
 })
 function update_estimation_amount(frm,cdt,cdn){
     let row = locals[cdt][cdn];
@@ -44,6 +71,7 @@ function update_estimation_amount(frm,cdt,cdn){
     frm.refresh_field("sub_contractors")
     frm.refresh_field("additional_costs")
     frm.refresh_field("fuel_consumption")
+    frm.refresh_field("site_consumables")
 
     calculate_totals(frm); // Update totals after amount is set
 
@@ -105,9 +133,9 @@ function calculate_totals(frm) {
         frm.set_value("additional_costs_total", additional_costs_total);
 
         frm.doc.site_consumables.forEach(row => {
-            console.log("yuyuyuyuyuy")
+            
             site_consumable_total += row.amount || 0;
-            console.log(site_consumable_total)
+            
         });
         frm.set_value("site_consumable_total", site_consumable_total);
 
