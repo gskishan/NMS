@@ -2,22 +2,30 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Air Ticket', {
-    validate: function (frm) {
-        if (frm.doc.employee) {
-            frappe.call({
-                method: "nms.nms.doctype.air_ticket.air_ticket.validate_attendance",
-                args: {
-                    employee: frm.doc.employee,
-                    air_ticket_working_days: frm.doc.number_of_working_days
-                },
-                callback: function (response) {
-                    if (!response.message) {
-                        frappe.throw(
-                            "Attendance requests are less than the required working days. You cannot fill the Air Ticket form."
-                        );
-                    }
-                }
-            });
-        }
+    expense_amount: function(frm){
+        calculate_totals(frm)
     }
 });
+
+frappe.ui.form.on("Air Ticket CT",{
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
+
+function calculate_totals(frm) {
+    let air_ticket_total = 0;
+    
+    frm.doc.member_name.forEach(row => {
+        air_ticket_total += row.amount || 0;
+    });
+    frm.set_value("sub_total", air_ticket_total);
+
+    let main_total =
+    air_ticket_total +
+    frm.doc.expense_amount;
+
+    frm.set_value("main_total", main_total);
+
+    frm.refresh_fields();
+}

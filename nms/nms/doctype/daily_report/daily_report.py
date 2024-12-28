@@ -45,10 +45,6 @@ class DailyReport(Document):
 
 					overtime_hours = emp_time_diff - shift_time_diff if emp_time_diff > shift_time_diff else 0
 
-					# late_entry = report_from_time > shift_start_time
-					# leave_early = report_to_time < shift_end_time
-					
-					# Create or update attendance
 					self.create_or_update_attendance(
 						emp_doc, 
 						self.date, 
@@ -61,11 +57,12 @@ class DailyReport(Document):
 		attendance_name = frappe.db.exists(
 			"Attendance", {"employee": employee.name, "attendance_date": attendance_date}
 		)
+		print("\n\n\n\n attendance_date",attendance_date)
 		if not attendance_name:
 			attendance = frappe.new_doc("Attendance")
 			attendance.employee = employee.name
 			attendance.attendance_date = attendance_date
-
+		print("\n\n\n\n att_date",attendance_date)
 		# Update Attendance Fields
 		attendance.status = "Present"
 		attendance.custom_overtime = overtime_hours > 0

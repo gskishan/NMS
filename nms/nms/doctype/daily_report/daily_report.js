@@ -33,7 +33,8 @@ frappe.ui.form.on("Equipment Daily CT",{
 })
 
 
-frappe.ui.form.on("Employee Daily CT",{
+
+frappe.ui.form.on("Employee Daily Report OT",{
     rate: function (frm, cdt, cdn) {
         update_estimation_amount(frm, cdt, cdn);
     },
@@ -82,7 +83,7 @@ function calculate_totals(frm) {
     });
     frm.set_value("subtotal_equipments", equipments_total);
 
-    frm.doc.employee.forEach(row => {
+    frm.doc.employee_shift.forEach(row => {
         employees_total += row.amount || 0;
     });
     frm.set_value("subtotal_employee", employees_total);

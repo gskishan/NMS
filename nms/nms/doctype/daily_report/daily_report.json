@@ -22,8 +22,10 @@
   "project",
   "section_break_ecwb",
   "employee_shift",
-  "section_break_quex",
-  "work_carried_out",
+  "section_break_siiu",
+  "column_break_dapw",
+  "column_break_yexs",
+  "subtotal_employee",
   "section_break_xzef",
   "equipment",
   "amended_from",
@@ -31,12 +33,6 @@
   "column_break_sfnc",
   "column_break_uzwu",
   "subtotal_equipments",
-  "section_break_acpc",
-  "employee",
-  "section_break_siiu",
-  "column_break_dapw",
-  "column_break_yexs",
-  "subtotal_employee",
   "section_break_xcuq",
   "consumables",
   "section_break_wyrf",
@@ -61,7 +57,9 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_norn",
@@ -86,16 +84,6 @@
    "fieldname": "personal",
    "fieldtype": "Text Editor",
    "label": "Personal"
-  },
-  {
-   "fieldname": "section_break_quex",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "work_carried_out",
-   "fieldtype": "Table",
-   "label": "Work Carried Out",
-   "options": "Work Carried Out Ct"
   },
   {
    "fieldname": "section_break_xzef",
@@ -142,11 +130,6 @@
    "fieldtype": "Link",
    "label": "Contract Type",
    "options": "Contract Type"
-  },
-  {
-   "fieldname": "employee",
-   "fieldtype": "Table",
-   "options": "Employee Daily CT"
   },
   {
    "fieldname": "equipment",
@@ -230,10 +213,6 @@
    "label": "Subtotal Consumables"
   },
   {
-   "fieldname": "section_break_acpc",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "section_break_xcuq",
    "fieldtype": "Section Break"
   },
@@ -258,7 +237,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-27 00:45:51.066511",
+ "modified": "2024-12-27 20:44:03.855101",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Daily Report",

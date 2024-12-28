@@ -9,7 +9,10 @@
   "employee",
   "from_time",
   "to_time",
-  "remarks"
+  "remarks",
+  "rate",
+  "qty",
+  "amount"
  ],
  "fields": [
   {
@@ -36,12 +39,29 @@
    "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Remarks"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Per Day Rate"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-25 22:54:15.984696",
+ "modified": "2024-12-27 20:45:52.341098",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Employee Daily Report OT",

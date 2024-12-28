@@ -9,9 +9,20 @@
   "amended_from",
   "employee",
   "employee_category",
+  "expense_amount",
   "column_break_tgpi",
   "number_of_working_days",
-  "amount"
+  "amount",
+  "section_break_aucm",
+  "member_name",
+  "section_break_lurv",
+  "column_break_pklt",
+  "column_break_jfnf",
+  "sub_total",
+  "section_break_ymyh",
+  "column_break_nyps",
+  "column_break_rsvp",
+  "main_total"
  ],
  "fields": [
   {
@@ -55,12 +66,61 @@
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount"
+  },
+  {
+   "fieldname": "expense_amount",
+   "fieldtype": "Currency",
+   "label": "Employee Expense Amount"
+  },
+  {
+   "fieldname": "section_break_aucm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Table",
+   "label": "Member Name",
+   "options": "Air Ticket CT"
+  },
+  {
+   "fieldname": "section_break_lurv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pklt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jfnf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sub_total",
+   "fieldtype": "Float",
+   "label": "Sub Total"
+  },
+  {
+   "fieldname": "section_break_ymyh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nyps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rsvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_total",
+   "fieldtype": "Float",
+   "label": "Main Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-19 20:17:15.465316",
+ "modified": "2024-12-27 21:09:38.966313",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Air Ticket",
