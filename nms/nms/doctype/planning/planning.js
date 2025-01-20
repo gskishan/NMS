@@ -157,6 +157,17 @@ frappe.ui.form.on("Sub-Contractor CT",{
         calculate_totals(frm);
     }
 })
+frappe.ui.form.on("Additional Cost CT",{
+    price: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    day: function (frm, cdt, cdn) {
+        update_estimation_amount(frm, cdt, cdn);
+    },
+    amount: function (frm) {
+        calculate_totals(frm);
+    }
+})
 
 frappe.ui.form.on("Asset Planning CT",{
     price: function (frm, cdt, cdn) {

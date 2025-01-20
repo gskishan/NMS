@@ -144,7 +144,7 @@
    "fieldname": "additional_costs",
    "fieldtype": "Table",
    "label": "Additional Costs",
-   "options": "Estimation Ct"
+   "options": "Additional Cost CT"
   },
   {
    "fieldname": "site_consumables",
@@ -361,7 +361,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-27 00:23:02.599373",
+ "modified": "2025-01-20 21:14:28.275842",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Estimation",
