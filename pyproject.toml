@@ -4,7 +4,7 @@ authors = [
     { name = "kishan", email = "shreyasnaik01@gmail.com"}
 ]
 description = "NMS Project"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
