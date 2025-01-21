@@ -145,9 +145,89 @@
             {% endif %}
             {% endfor %}
 
-            <!-- Additional Cost Section -->
             <tr class="section-header">
                 <td>3.0</td>
+                <td colspan="11">Boats And Vehicles</td>
+            </tr>
+            {% for e in data %}
+            {% if e.source_table == "Boats And Vehicles" %}
+            <tr>
+                <td>{{ e.sr_no }}</td>
+                <td>{{ e.component }}</td>
+                <td>{{ e.sub_components }}</td>
+                <td>{{ e.price }}</td>
+                <td>{{ e.day }}</td>
+                <td>{{ e.amount }}</td>
+                <td>{{ e.p_price }}</td>
+                <td>{{ e.p_day }}</td>
+                <td>{{ e.p_amount }}</td>
+                <td>{{ e.price_difference }}</td>
+                <td>{{ e.day_difference }}</td>
+                <td>{{ e.amount_difference }}</td>
+            </tr>
+            {% endif %}
+            {% if e.estimation_name ==  "Boats And Vehicles"%}
+            <tr class="totals-row">
+                <td></td>
+                <td>Total</td>
+                <td></td>
+                <td>{{ e.price }}</td>
+                <td>{{ e.day }}</td>
+                <td>{{ e.amount }}</td>
+                <td>{{ e.p_price }}</td>
+                <td>{{ e.p_day }}</td>
+                <td>{{ e.p_amount }}</td>
+                <td>{{ e.price_difference }}</td>
+                <td>{{ e.day_difference }}</td>
+                <td>{{ e.amount_difference }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            
+
+            <!-- Additional Cost Section -->
+            <tr class="section-header">
+                <td>4.0</td>
+                <td colspan="11">Sub-Contractor</td>
+            </tr>
+            {% for e in data %}
+            {% if e.source_table == "Sub-Contractor" %}
+            <tr>
+                <td>{{ e.sr_no }}</td>
+                <td>{{ e.component }}</td>
+                <td>{{ e.sub_components }}</td>
+                <td>{{ e.price }}</td>
+                <td>{{ e.day }}</td>
+                <td>{{ e.amount }}</td>
+                <td>{{ e.p_price }}</td>
+                <td>{{ e.p_day }}</td>
+                <td>{{ e.p_amount }}</td>
+                <td>{{ e.price_difference }}</td>
+                <td>{{ e.day_difference }}</td>
+                <td>{{ e.amount_difference }}</td>
+            </tr>
+            {% endif %}
+            {% if e.estimation_name ==  "Sub-Contractor"%}
+            <tr class="totals-row">
+                <td></td>
+                <td>Total</td>
+                <td></td>
+                <td>{{ e.price }}</td>
+                <td>{{ e.day }}</td>
+                <td>{{ e.amount }}</td>
+                <td>{{ e.p_price }}</td>
+                <td>{{ e.p_day }}</td>
+                <td>{{ e.p_amount }}</td>
+                <td>{{ e.price_difference }}</td>
+                <td>{{ e.day_difference }}</td>
+                <td>{{ e.amount_difference }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            
+            <!-- Site Consumable Section -->
+            <tr class="section-header">
+                <td>5.0</td>
                 <td colspan="11">Additional Cost</td>
             </tr>
             {% for e in data %}
@@ -185,9 +265,9 @@
             {% endif %}
             {% endfor %}
             
-            <!-- Site Consumable Section -->
+            <!-- Fuel Consumption Section -->
             <tr class="section-header">
-                <td>4.0</td>
+                <td>6.0</td>
                 <td colspan="11">Site Consumable</td>
             </tr>
             {% for e in data %}
@@ -207,6 +287,7 @@
                 <td>{{ e.amount_difference }}</td>
             </tr>
             {% endif %}
+   
             {% if e.estimation_name ==  "Site Consumable"%}
             <tr class="totals-row">
                 <td></td>
@@ -224,10 +305,8 @@
             </tr>
             {% endif %}
             {% endfor %}
-            
-            <!-- Fuel Consumption Section -->
             <tr class="section-header">
-                <td>5.0</td>
+                <td>7.0</td>
                 <td colspan="11">Fuel Consumption</td>
             </tr>
             {% for e in data %}
