@@ -10,7 +10,11 @@
   "price",
   "day",
   "amount",
-  "remark"
+  "remark",
+  "planning_section",
+  "p_price",
+  "p_day",
+  "p_amount"
  ],
  "fields": [
   {
@@ -43,18 +47,41 @@
    "fieldname": "remark",
    "fieldtype": "Text Editor",
    "label": "Remark"
+  },
+  {
+   "fieldname": "planning_section",
+   "fieldtype": "Section Break",
+   "label": "Planning ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "p_price",
+   "fieldtype": "Float",
+   "label": "Per Day Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "p_day",
+   "fieldtype": "Int",
+   "label": "No. of Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "p_amount",
+   "fieldtype": "Float",
+   "label": "Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-10 14:53:26.510174",
+ "modified": "2025-01-20 19:45:11.057985",
  "modified_by": "Administrator",
  "module": "Nms",
  "name": "Employee Estimation",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+ "sort_order": "DESC"
 }

@@ -87,6 +87,37 @@ class Planning(Document):
 		if asset_status in ['Planned', 'Overdue']:
 			frappe.throw(f"Asset {asset} is in {asset_status} state and cannot be reserved.")
 
+	def on_submit(self):
+		self.update_estimation()
+
+	def on_cancel(self):
+		self.update_estimation(is_cancel=1)
+
+	def update_estimation(self, is_cancel=None):
+		est = frappe.get_doc("Estimation", self.estimation)
+		
+
+		self.update_grid(self.employees, est.employees, is_cancel)
+		self.update_grid(self.equipments, est.equipments, is_cancel)
+		self.update_grid(self.boats_and_vehicles, est.boats_and_vehicles, is_cancel)
+		self.update_grid(self.sub_contractors, est.sub_contractors, is_cancel)
+		self.update_grid(self.site_consumables, est.site_consumables, is_cancel)
+		self.update_grid(self.fuel_consumption, est.fuel_consumption, is_cancel)
+		self.update_grid(self.additional_costs, est.additional_costs, is_cancel)
+
+	def update_grid(self, source, target, is_cancel=None):
+		for d in source:
+			for k in target:
+				if d.sub_components == k.sub_components:
+					if is_cancel:
+						k.db_set("p_price", k.p_price - d.price)
+						k.db_set("p_day", k.p_day - d.day)
+						k.db_set("p_amount", k.p_amount - d.amount)
+					else:
+						k.db_set("p_price", k.p_price + d.price)
+						k.db_set("p_day", k.p_day + d.day)
+						k.db_set("p_amount", k.p_amount + d.amount)
+
 
 
 def get(args=None):

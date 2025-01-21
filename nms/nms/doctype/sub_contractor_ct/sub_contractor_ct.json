@@ -11,7 +11,11 @@
   "price",
   "day",
   "amount",
-  "remark"
+  "remark",
+  "planning_section",
+  "p_price",
+  "p_day",
+  "p_amount"
  ],
  "fields": [
   {
@@ -43,7 +47,30 @@
    "fieldname": "remark",
    "fieldtype": "Text Editor",
    "label": "Remark"
-  }
+  },
+  {
+    "fieldname": "planning_section",
+    "fieldtype": "Section Break",
+    "label": "Planning"
+   },
+   {
+    "fieldname": "p_price",
+    "fieldtype": "Float",
+    "label": "Per Day Rate",
+    "read_only": 1
+   },
+   {
+    "fieldname": "p_day",
+    "fieldtype": "Int",
+    "label": "No. of Days",
+    "read_only": 1
+   },
+   {
+    "fieldname": "p_amount",
+    "fieldtype": "Float",
+    "label": "Amount",
+    "read_only": 1
+   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
