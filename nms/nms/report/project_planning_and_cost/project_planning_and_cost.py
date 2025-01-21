@@ -1,12 +1,8 @@
-
-
 import frappe
 
 def execute(filters=None):
 	columns, data = get_columns(filters),(get_data(filters))
-	frappe.errprint([data,"dt"])
 	data=get_total_wise(data)
-	frappe.errprint([data,"d1"])
 
 
 	return columns, data
@@ -41,6 +37,7 @@ def get_total_wise(data):
 
 
 def get_data(filters):
+	cond=get_condition(filters)
 	sql="""SELECT 
 			p.name AS estimation_name,
 			'Employee' AS source_table, 
@@ -56,13 +53,13 @@ def get_data(filters):
 			es.amount - es.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabEmployee Estimation` es ON p.name = es.parent
-		WHERE es.price IS NOT NULL
+		WHERE es.price IS NOT NULL  {0}
 
 		UNION ALL
 
 		SELECT 
 			p.name AS estimation_name,
-			'Asset' AS source_table, 
+			'Equipments' AS source_table, 
 			ac.sub_components,
 			ac.price, 
 			ac.p_price, 
@@ -75,7 +72,25 @@ def get_data(filters):
 			ac.amount - ac.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabAsset Estimation CT` ac ON p.name = ac.parent
-		WHERE ac.price IS NOT NULL
+		WHERE ac.price IS NOT NULL  {0}
+		UNION ALL
+
+		SELECT 
+			p.name AS estimation_name,
+			'Boats And Vehicles' AS source_table, 
+			ect.sub_components,
+			ect.price, 
+			ect.p_price, 
+			ect.price - ect.p_price AS price_difference,
+			ect.day, 
+			ect.p_day, 
+			ect.day - ect.p_day AS day_difference,
+			ect.amount, 
+			ect.p_amount, 
+			ect.amount - ect.p_amount AS amount_difference
+		FROM `tabEstimation` p
+		LEFT JOIN `tabEstimation Ct` ect ON p.name = ect.parent
+		WHERE ect.price IS NOT NULL {0}
 
 		UNION ALL
 
@@ -94,7 +109,7 @@ def get_data(filters):
 			sc.amount - sc.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabSub-Contractor CT` sc ON p.name = sc.parent
-		WHERE sc.price IS NOT NULL
+		WHERE sc.price IS NOT NULL  {0}
 
 		UNION ALL
 
@@ -113,7 +128,7 @@ def get_data(filters):
 			acc.amount - acc.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabAdditional Cost CT` acc ON p.name = acc.parent
-		WHERE acc.price IS NOT NULL
+		WHERE acc.price IS NOT NULL  {0}
 
 		UNION ALL
 
@@ -132,7 +147,7 @@ def get_data(filters):
 			sct.amount - sct.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabSite Consumable Ct` sct ON p.name = sct.parent
-		WHERE sct.price IS NOT NULL
+		WHERE sct.price IS NOT NULL  {0}
 
 		UNION ALL
 
@@ -151,11 +166,26 @@ def get_data(filters):
 			fc.amount - fc.p_amount AS amount_difference
 		FROM `tabEstimation` p
 		LEFT JOIN `tabFuel Consumption CT` fc ON p.name = fc.parent
-		WHERE fc.price IS NOT NULL;
+		WHERE fc.price IS NOT NULL {0}
 
-		"""
+		""".format(cond)
+	frappe.errprint(sql)
 	data=frappe.db.sql(sql,as_dict=1)
 	return data
+
+def get_condition(filters):
+    cond = ""
+    if filters.get("project"):
+        cond += "and p.project='{0}'".format(filters.get("project"))
+    if filters.get("from_date") and filters.get("to_date"):
+        from_date = filters.get("from_date")
+        to_date = filters.get("to_date")
+        # Ensure both values are non-empty strings
+        if from_date and to_date:
+            cond += " and p.date between '{0}' and '{1}'".format(from_date, to_date)
+        else:
+            raise ValueError("Both 'from_date' and 'to_date' must be valid.")
+    return cond
 
 
 def get_columns(filters):
