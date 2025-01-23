@@ -66,6 +66,7 @@ function manage_buttons(frm) {
                 doc.planning = frm.doc.custom_planning
                 doc.sales_order = frm.doc.custom_sales_order
 				 doc.sales_invoice = frm.doc.custom_contract_type
+				doc.task=frm.doc.name
             });
         });
     }
