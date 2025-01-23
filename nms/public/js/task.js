@@ -56,6 +56,20 @@ function manage_buttons(frm) {
         });
     }
 
+	 if (frm.doc.custom_is_fuel_log) {
+        frm.add_custom_button(__('Fuel Log'), function () {
+            frappe.new_doc('Fuel Log',{},doc =>{
+                doc.lead = frm.doc.custom_lead
+                doc.estimation = frm.doc.custom_estimation
+                doc.quotation = frm.doc.custom_quotation
+                doc.project = frm.doc.project
+                doc.planning = frm.doc.custom_planning
+                doc.sales_order = frm.doc.custom_sales_order
+				 doc.sales_invoice = frm.doc.custom_contract_type
+            });
+        });
+    }
+
     if (frm.doc.custom_is_meal) {
         frm.add_custom_button(__('Meal'), function () {
             frappe.new_doc('Meal',{},doc => {
