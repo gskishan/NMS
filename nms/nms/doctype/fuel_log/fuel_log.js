@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Fuel Log', {
 	refresh: function(frm) {
-		if (frm.doc.status==1){
+		if (frm.doc.docstatus==1){
 			frm.add_custom_button(__('Journal Entry'), function () {
 				frappe.new_doc('Journal Entry',{},doc =>{
 					doc.custom_fuel_log_no = frm.doc.name
