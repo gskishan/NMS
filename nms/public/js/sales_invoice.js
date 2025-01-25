@@ -7,9 +7,9 @@ frappe.ui.form.on('Sales Invoice', {
 			frm.add_custom_button(__('Daily Report'), function () {
 				frappe.new_doc('Daily Report',{},doc =>{
 					doc.sales_invoice = frm.doc.name
-					doc.custom_client= frm.doc.customer
-					doc.custom_contract_type = frm.doc.estimation
-					doc.custom_cost_center= frm.doc.quotation
+					doc.custom_client= frm.doc.custom_client
+					doc.custom_contract_type = frm.doc.custom_contract_type
+					doc.custom_cost_center= frm.doc.cost_center
 					doc.project = frm.doc.project
 				
 
