@@ -14,6 +14,7 @@
   "task",
   "column_break_zpyb",
   "personal",
+  "sales_invoice",
   "accounting_dimensions_section",
   "custom_client",
   "custom_cost_center",
@@ -232,6 +233,12 @@
    "fieldname": "main_total",
    "fieldtype": "Float",
    "label": "Main Total"
+  },
+    {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
   }
  ],
  "index_web_pages_for_search": 1,
